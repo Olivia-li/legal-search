@@ -1,5 +1,5 @@
 import re
-from main import convert_pdf_to_string
+from main import convert_pdf_to_string, convert_pdf_to_html
 
 FILE_PATH = "./docs/contracts/groundfloor-sub.pdf"
 
@@ -64,6 +64,8 @@ def main():
   sections, definitions = extract_definitions_from_text(text)
   print(sections)
   print(definitions)
+  html = convert_pdf_to_html(FILE_PATH, definitions)
+  print(html)
 
 if __name__ == '__main__':
   main()

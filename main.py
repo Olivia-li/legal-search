@@ -23,7 +23,7 @@ def convert_pdf_to_html(path: Text, definitions: Dict) -> Text:
 
     output_html = output_html.getvalue().decode('utf8')
     for key, value in definitions.items():
-        output_html = re.sub(key, f"<span id='{value}'>{key}</span>", output_html, flags=re.IGNORECASE)
+        output_html = re.sub(key, f'<span id="{"".join(key.lower().split())}">{key}</span>', output_html, flags=re.IGNORECASE)
     return(output_html)
 
 
