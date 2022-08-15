@@ -1,2 +1,4 @@
 lib/
 .DS_STORE
+bin/
+.gitconfig
