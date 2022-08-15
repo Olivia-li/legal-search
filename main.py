@@ -6,11 +6,10 @@ from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfparser import PDFParser
-from pdfminer.high_level import extract_text_to_fp
 
 output_string = BytesIO()
 
-with open('docs/contracts/groundfloor-sub.pdf', 'rb') as in_file:
+with open('docs/contracts/hotelier-sub.pdf', 'rb') as in_file:
     parser = PDFParser(in_file)
     doc = PDFDocument(parser)
     rsrcmgr = PDFResourceManager()
@@ -19,4 +18,4 @@ with open('docs/contracts/groundfloor-sub.pdf', 'rb') as in_file:
     for page in PDFPage.create_pages(doc):
         interpreter.process_page(page)
 
-print(output_string.getvalue().decode('utf8'))
+print(output_string.getvalue().decode('utf8').replace("<br>", "").replace("<body>", '<body style="text-align: justify">'))
