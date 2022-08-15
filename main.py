@@ -35,4 +35,4 @@ def convert_pdf_to_string(path: Text) -> Text:
         for page in PDFPage.create_pages(doc):
             string_interpreter.process_page(page)
 
-    print(output_string.getvalue())
+    return output_string.getvalue()
