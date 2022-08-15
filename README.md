@@ -1,6 +1,6 @@
 # Legal Search
 ## Python Virtual environment
-To run the virtual environment run `source ./bin/active`
+To run the virtual environment run `source ./bin/active` or `source bin/activate`
 </br>
 Now you can install dependencies in the virtual env using `pip3 install`
 </br>
