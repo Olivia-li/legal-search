@@ -1,0 +1,1108 @@
+
+    (window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"32edb8f179",applicationID:"436723953"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    SEC.gov | Disclosure Considerations for China-Based Issuers
+    window.env = "production";
+    
+
+
+    {"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/288631","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":".*\\.gov|http:\/\/www.xbrl.org\/utr\/2013-05-17\/utr.xml|http:\/\/www.xbrl.org\/dtr\/type\/numeric-2009-12-16.xsd|http:\/\/www.xbrl.org\/dtr\/type\/nonNumeric-2009-12-16.xsd|https:\/\/secir.secure.force.com\/ombudsman\/OMMSForm","extInclude":"","extCssExclude":".data-exempt","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving the SEC Website. The link you have selected is located on another server. Please click on the OK button below to proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"user":{"uid":0,"permissionsHash":"04c00260856b47a8f01845e15ffeca03669183d8466dd7ddc4290c568154092e"}}
+
+
+  
+  
+
+    
+      Skip to main content
+    
+    
+      
+    
+
+
+
+
+  
+    
+      
+        
+    
+
+  
+    
+        
+
+
+
+Search SEC.gov      
+
+
+
+
+Company Filings 
+
+
+
+  
+
+  
+    
+      
+            
+      
+    
+    
+      
+    
+  
+  
+    
+      U.S. Securities and Exchange Commission
+  
+   
+
+    
+    q
+  
+
+    
+  
+
+  
+
+
+      
+
+      
+
+        
+            
+    
+  
+    
+      
+            
+          
+    
+              
+                          
+                About
+                                
+                          
+                Careers
+              
+                    
+                Commissioners
+              
+                    
+                Contact
+              
+                    
+                Reports and Publications
+              
+                    
+                Securities Laws
+              
+                    
+                What We Do
+              
+        
+  
+              
+                    
+                Divisions & Offices
+                                
+                          
+                Corporation Finance
+              
+                    
+                Enforcement
+              
+                    
+                Investment Management
+              
+                    
+                Economic and Risk Analysis
+              
+                    
+                Trading and Markets
+              
+                    
+                Office of Administrative Law Judges
+              
+                    
+                Examinations
+              
+                    
+                Regional Offices
+              
+                    
+                All Divisions and Offices
+              
+        
+  
+              
+                    
+                Enforcement
+                                
+                          
+                Litigation Releases
+              
+                    
+                Administrative Proceedings
+              
+                    
+                Opinions and Adjudicatory Orders
+              
+                    
+                Accounting and Auditing
+              
+                    
+                Trading Suspensions
+              
+                    
+                How Investigations Work
+              
+                    
+                Receiverships
+              
+                    
+                Information for Harmed Investors
+              
+        
+  
+              
+                    
+                Regulation
+                                
+                          
+                Rulemaking Index
+              
+                    
+                Proposed Rules
+              
+                    
+                Final Rules
+              
+                    
+                Interim Final Temporary Rules
+              
+                    
+                Other Orders and Notices
+              
+                    
+                Self-Regulatory Organizations
+              
+                    
+                Staff Interpretations
+              
+        
+  
+              
+                    
+                Education
+                                
+                          
+                Investor Education
+              
+                    
+                Small Business Capital Raising 
+              
+                    
+                Glossaries
+              
+        
+  
+              
+                    
+                Filings
+                                
+                          
+                EDGAR – Search & Access
+              
+                    
+                EDGAR – Information for Filers
+              
+                    
+                Company Filing Search
+              
+                    
+                How to Search EDGAR
+              
+                    
+                Requesting Public Documents
+              
+                    
+                Forms List
+              
+                    
+                About EDGAR
+              
+        
+  
+              
+                    
+                News
+                                
+                          
+                Press Releases
+              
+                    
+                Speeches and Statements
+              
+                    
+                Spotlight Topics
+              
+                    
+                Upcoming Events
+              
+                    
+                Webcasts
+              
+                    
+                SEC in the News
+              
+                    
+                SEC Videos
+              
+                    
+                Media Gallery
+              
+        
+  
+              
+        
+  
+
+  
+    
+  
+
+            
+  User account menu
+  
+
+        
+              
+        
+            
+              Log in
+              
+
+
+        
+  
+
+
+  
+
+  
+
+
+        
+
+        
+          
+              
+                      
+      
+        U.S. Securities and Exchange Commission
+                                
+                      
+      
+        Divisions & Offices
+              
+
+                  
+      
+        Enforcement
+              
+
+                  
+      
+        Regulation
+              
+
+                  
+      
+        Education
+              
+
+                  
+      
+        Filings
+              
+
+                  
+      
+        Newsroom
+              
+
+        
+  
+              
+
+                  
+      
+        Newsroom
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speehes
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        RSS Feeds
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speeches
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        Social Media
+                                
+                      
+      
+        @SEC_News
+              
+
+                  
+      
+        SEC Channel
+              
+
+                  
+      
+        SEC Photostream
+              
+
+        
+  
+              
+
+        
+  
+
+
+
+                          
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                  
+
+      
+    
+          
+        
+            
+    
+
+  
+
+
+        
+      
+    
+    
+                                
+        
+        
+        
+    
+    
+      
+
+                  
+
+      
+      
+            
+          
+            
+                              
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                      
+
+          
+        
+                    
+
+      
+
+    
+    		
+    
+    
+              
+            
+    
+  
+    
+      
+
+  
+  
+    
+
+    
+                
+
+
+
+
+        
+
+
+  
+        
+            
+                  		        Other
+            		              
+            
+
+
+  
+    
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+    
+    
+      
+        
+      
+      
+        
+      
+      
+        
+      
+    
+    
+    
+  
+
+
+
+              
+              
+                
+        
+        Disclosure Considerations for China-Based Issuers
+                
+
+        
+                  
+                            Nov. 23, 2020
+                       
+        
+                
+              
+      
+      
+            Division of Corporation Finance
+Securities and Exchange Commission
+
+CF Disclosure Guidance: Topic No. 10
+
+Date: November 23, 2020
+
+Summary: This guidance provides the Division of Corporation Finance’s views regarding certain disclosure considerations for companies based in or with the majority of their operations in the People’s Republic of China (“PRC” or “China”).
+
+Supplemental Information: The statements in this CF Disclosure Guidance represent the views of the Division of Corporation Finance. This guidance is not a rule, regulation or statement of the Securities and Exchange Commission. Further, the Commission has neither approved nor disapproved its content. This guidance, like all staff guidance, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person.
+
+Introduction[1]
+
+Over the past decade, U.S. investors have increased their exposure to companies based in or with the majority of their operations in China (“China-based Issuers”).[2] China, while often viewed from an investing perspective as an emerging market, is the world’s second largest economy and, through direct investment as well as index-based investing, U.S. investors have increased their exposure to China-based Issuers over the past decade.
+
+High-quality, reliable disclosure, including financial reporting, is at the core of the Commission’s mission to protect investors, maintain fair, orderly, and efficient markets, and facilitate capital formation. Although China-based Issuers that access the U.S. public capital markets generally have the same disclosure obligations and legal responsibilities as other non-U.S. issuers, the Commission’s ability to promote and enforce high-quality disclosure standards for China-based Issuers may be materially limited. As a result, there is substantially greater risk that their disclosures may be incomplete or misleading. In addition, in the event of investor harm, investors generally will have substantially less access to recourse, in comparison to U.S. domestic companies and foreign issuers in other jurisdictions.[3] Below we discuss some of the potential risks associated with investments in China-based Issuers. We then highlight related disclosure considerations that these issuers should consider as they seek to fulfill their disclosure obligations under the federal securities laws.
+
+We recognize that some of the risks and differences discussed below pertain to issuers operating in emerging markets or foreign private issuers more generally. However, we include these risks and differences because the limitations on U.S. regulatory oversight of China-based Issuers can magnify these risks and differences. Additionally, some of the risks and differences may amplify other risks and differences, increasing the significance of their disclosure for China-based Issuers. Thus, China-based Issuers should consider the cumulative effects of these risks and differences as they consider their disclosure obligations under the federal securities laws.
+
+Risks Associated with China-based Issuers
+
+Risks Related to High-Quality and Reliable Financial Reporting
+
+One of the most significant risks to high-quality, reliable disclosure and financial reporting by China-based Issuers results from current restrictions on the Public Company Accounting Oversight Board’s (“PCAOB”) ability to inspect audit work and practices of PCAOB-registered public accounting firms in China and on the PCAOB’s ability to inspect audit work with respect to China-based Issuer audits by PCAOB-registered public accounting firms in Hong Kong. Although the Sarbanes-Oxley Act of 2002 requires the PCAOB to inspect registered accounting firms to assess their compliance with auditing standards, to undertake investigations, and to bring enforcement actions for non-compliance with these standards, China has not provided the PCAOB access to inspect or investigate these registered public accounting firms with respect to their audits of China-based Issuers.[4]
+
+As part of a continued regulatory focus in the United States on access to audit information, both the U.S. House of Representatives and the U.S. Senate have independently passed bills that, if enacted, could result in delisting companies that use an auditor that the PCAOB is not able to inspect.[5] Furthermore, in its Report on Protecting United States Investors from Significant Risks from Chinese Companies, the President’s Working Group on Financial Markets recommended, among other things, that U.S. exchanges require PCAOB access to work papers of the principal audit firm as a condition to initial and continued exchange listing.[6] While each of these initiatives contemplates a transition period for currently listed issuers to comply in order to reduce market disruption, any actions, proceedings, or new rules resulting from these efforts may have an adverse impact on trading prices of securities or terminate the trading of securities of China-based Issuers with PCAOB-registered public accounting firms in China and Hong Kong.
+
+Risks Related to Access to Information and Regulatory Oversight
+
+China has often restricted U.S. regulators’ access to information and limited regulators’ ability to investigate or pursue remedies with respect to China-based Issuers, generally citing to state secrecy and national security laws, blocking statutes, or other laws or regulations. In addition, according to Article 177 of the PRC Securities Law, which became effective in March 2020, no overseas securities regulator can directly conduct investigations or evidence collection activities within the PRC and no entity or individual in China may provide documents and information relating to securities business activities to overseas regulators without Chinese government approval. The SEC, U.S. Department of Justice, and other U.S. authorities face substantial challenges in bringing and enforcing actions against China-based Issuers and their officers and directors. As a result, investors in China-based Issuers may not benefit from a regulatory environment that fosters effective enforcement of U.S. federal securities laws.
+
+Risks Related to a Company’s Organizational Structure
+
+Current regulations in China limit or prohibit foreign investment in Chinese companies operating in certain industries. For example, there are restrictions on foreign ownership of telecommunications companies and prohibitions on ownership of educational institutions.[7] To circumvent these restrictions, many China-based Issuers form non-Chinese holding companies that enter into contractual arrangements, intended to mimic direct ownership, with Chinese operating companies. Through these contractual arrangements, the China-based Issuer is generally able to consolidate the Chinese operating company, commonly referred to as a variable interest entity or VIE, in its financial statements, although whether the China-based Issuer maintains legal control of the Chinese operating company is a matter of Chinese law. Under this structure, the Chinese operating company, in which the China-based Issuer cannot hold an equity interest, typically holds licenses and other assets that the China-based Issuer cannot hold directly.
+
+These China-based Issuer VIE structures pose risks to U.S. investors that are not present in other organizational structures. For example, exerting control through contractual arrangements may be less effective than direct equity ownership, and a company may incur substantial costs to enforce the terms of the arrangements, including those relating to the distribution of funds among the entities. Further, the Chinese government could determine that the agreements establishing the VIE structure do not comply with Chinese law and regulations, including those related to restrictions on foreign ownership, which could subject a China-based Issuer to penalties, revocation of business and operating licenses, or forfeiture of ownership interests. A China-based Issuer’s control over a VIE may also be jeopardized if a natural person who holds the equity interest in the VIE breaches the terms of the agreements, is subject to legal proceedings, or if any physical instruments, such as chops and seals, are used without the China-based Issuer’s authorization to enter into contractual arrangements in China.
+
+Risks Related to the Regulatory Environment
+
+China’s legal system is substantially different from the legal system in the United States and may raise risks and uncertainties concerning the intent, effect, and enforcement of its laws, rules, and regulations, including those that restrict the inflow and outflow of foreign capital or provide the Chinese government with significant authority to exert influence on a China-based Issuer’s ability to conduct business or raise capital. This lack of certainty may result in the inconsistent and unpredictable interpretation and enforcement of laws, rules, and regulations, which may change quickly. For example, China-based Issuers face risks related to evolving laws and regulations, which could impede their ability to obtain or maintain permits or licenses required to conduct business in China. In the absence of required permits or licenses, governmental authorities may impose material sanctions or penalties on the company.
+
+Differences in Shareholder Rights and Recourse, Governance, and Reporting Associated with China-based Issuers
+
+Limitations on Shareholder Rights and Recourse
+
+Legal claims, including federal securities law claims, against China-based Issuers, or their officers, directors, and gatekeepers, may be difficult or impossible for investors to pursue in U.S. courts. Even if an investor obtains a judgment in a U.S. court, the investor may be unable to enforce such judgment, particularly in the case of a China-based Issuer, where the related assets or persons are typically located outside of the United States and in jurisdictions that may not recognize or enforce U.S. judgments. If an investor is unable to bring a U.S. claim or collect on a U.S. judgment, the investor may have to rely on legal claims and remedies available in China or other overseas jurisdictions where the China-based Issuer may maintain assets. The claims and remedies available in these jurisdictions are often significantly different from those available in the United States and difficult to pursue.
+
+Corporate Law and Corporate Governance Differences
+
+China-based Issuers may be organized or incorporated in jurisdictions outside of both China and the United States, such as the Cayman Islands and British Virgin Islands. Differences between the corporate law and corporate governance rules and practices of these jurisdictions and U.S. jurisdictions may give rise to additional material risks and fewer shareholder protections. For example, the fiduciary duties that directors owe investors may be narrower in scope or less developed in these jurisdictions than in U.S jurisdictions.
+
+Certain China-based Issuers qualify as foreign private issuers,[8] which are exempt from certain rules of U.S. exchanges that are applicable to U.S. domestic issuers.[9] For example, U.S. stock exchanges often permit foreign private issuers to rely on home country corporate governance practices,[10] which means that these companies may not be required to:
+
+
+	have a majority of independent directors;
+	have independent audit committee members, compensation committee members, and nominating committee members;
+	have independent board members meet in executive session;
+	hold annual meetings; or
+	obtain shareholder approval for certain issuances of securities.
+
+
+Foreign private issuers may be entitled to certain exemptions from the audit committee independence requirements in Exchange Act Rule 10A-3.
+
+Reporting Differences
+
+To the extent that China-based Issuers qualify as foreign private issuers, they are exempt from certain reporting requirements under the federal securities laws applicable to U.S. domestic issuers. Foreign private issuers are exempt from Exchange Act reporting requirements relating to quarterly reports and quarterly certifications by the principal executive and financial officers; current reports on Form 8-K that domestic issuers are required to file upon the occurrence of specified events; the solicitations of proxies, consents, or authorizations under Section 14 of the Exchange Act; rules that require insiders to comply with Section 16 of the Exchange Act; and Regulation FD. Foreign private issuers also have four months after the end of the fiscal year to file their annual reports, as compared to 60 to 90 days for domestic companies.
+
+Disclosure Considerations for China-based Issuers
+
+China-based Issuers must fully disclose material risks related to their operations in China. As companies assess these risks and related disclosure obligations, questions to consider include:
+
+
+	Does the company provide clear and prominent disclosure of PCAOB inspection limitations and lack of enforcement mechanisms, as well as the risks relating to the quality of the financial statements? For example, for China-based Issuers that engage audit firms based in China or Hong Kong, does the company caution investors about:
+	
+		the ongoing inability of the PCAOB to inspect the audit work of its outside audit firm?
+		whether and how its audit committee has taken the lack of inspection into account in connection with the oversight of the outside audit firm and its procedures?
+		the difficulty regulators such as the SEC and PCAOB may have in obtaining audit work papers from the company’s auditors and the company and how that difficulty may impact the company and its shareholders?
+		the possibility that SEC proceedings against the audit firm that the issuer employs (whether in connection with an audit of the issuer or other issuers operating in China) could result in the imposition of penalties against the audit firm, such as suspension of the auditor’s ability to practice before the SEC?
+		the possibility that legislative or other regulatory action in the United States may result in listing standards or other requirements that, if the company cannot meet, may result in delisting and adversely affect the company’s liquidity or the trading price of the company’s securities that are listed or traded in the United States?
+		limits imposed by Chinese law on the ability of U.S. authorities, including the SEC, PCAOB, and the Department of Justice, to conduct investigations and bring actions, including Article 177?
+	
+	
+	Does the company use VIEs in its organizational structure? If so, does the company include sufficient disclosure about the related party transactions in the VIE structure and caution investors about the risks associated with the VIE structure employed in China, including that:
+	
+		the VIE structure may be determined by Chinese authorities to be inconsistent with the laws and regulations of China, including those related to foreign investment in certain industries?
+		the VIE structure may be disregarded by PRC tax authorities resulting in increased tax liabilities?
+		the VIE structure may not be as effective as direct ownership in controlling entities organized in China, which often hold the licenses necessary to conduct the company’s business in China?
+		control over, and funds due from, the VIE may be jeopardized if the natural person or persons that hold the equity interest in the VIE breach the terms of the agreement?
+		the VIE structure may result in unauthorized use of indicia of corporate power or authority, such as chops and seals?
+	
+	
+	Does the company disclose risks relating to the regulatory environment in China, including risks related to a less developed legal system, which may result in inconsistent and unpredictable interpretation and enforcement of laws and regulations? For example, does the company caution investors that:
+	
+		evolving laws and regulations and inconsistent enforcement thereof could lead to failure to obtain or maintain licenses and permits to do business in China?
+		intellectual property rights and protections may be insufficient for companies with material intellectual property in China?
+		the increased global focus on environmental and social issues and China’s potential adoption of more stringent standards in these areas may adversely impact the operations of China-based Issuers?
+		non-citizen shareholders may experience unfavorable tax consequences, including for dividends payable and gains on sales of securities for China-based companies if determined to be a resident enterprise for PRC tax purposes?
+		uncertainties in China’s legal system could limit the enforcement of contractual arrangements?
+		Chinese law restricts certain foreign investments in China and these laws continue to evolve?
+		Chinese governmental authorities have significant discretion that can be used to influence how the company conducts its business operations?
+		PRC law, and government control of currency conversion, may restrict the ability to transfer funds into or out of China?
+	
+	
+	Does the company provide risk disclosure about differing shareholder rights and remedies in the company’s country of organization and/or based on where a company’s operations are located? For example, does the company caution investors about:
+	
+		the difficulties in effecting service of legal process, enforcing judgments obtained in U.S. courts, and bringing claims against the company or its directors and officers?
+		the lack of shareholder rights and protections if the company is organized outside of the United States, particularly in jurisdictions where the law is less developed?
+	
+	
+	If the company is a foreign private issuer, does it describe:
+	
+		corporate governance differences pursuant to Item 16G of Form 20-F?[11]
+		differences in reporting requirements between U.S. domestic issuers and foreign private issuers such as the frequency of financial reporting, the exemption from filing quarterly reports and proxy solicitation materials, and the exemption from Regulation FD?
+	
+	
+
+
+
+
+
+[1] Additional information regarding staff initiatives and statements relating to emerging markets, including China, is available at https://www.sec.gov/page/emerging-markets-roundtable.
+
+
+
+[2] According to the PCAOB, “[i]n the 18-month period ended June 30, 2020, 17 PCAOB-registered firms in mainland China and Hong Kong signed audit reports for 202 public companies with a combined global market capitalization (U.S. and non-U.S. exchanges) of approximately $1.8 trillion.” See PCAOB, China-Related Access Challenges, available at https://pcaobus.org/International/Pages/China-Related-Access-Challenges.aspx (last visited Oct. 8, 2020). See also SEC Chairman Jay Clayton, PCAOB Chairman William D. Duhnke III, SEC Chief Accountant Sagar Teotia, SEC Division of Corporation Finance Director William Hinman and SEC Division of Investment Management Director Dalia Blass, Emerging Market Investments Entail Significant Disclosure, Financial Reporting and Other Risks; Remedies are Limited (April 21, 2020), available at https://www.sec.gov/news/public-statement/emerging-market-investments-disclosure-reporting.
+
+
+
+[3] See, e.g., SEC Office of Investor Education and Advocacy, Investor Bulletin: International Investing, available at https://www.sec.gov/reportspubs/investor-publications/investorpubsininvesthtm.html.
+
+
+
+[4] See President’s Working Group on Financial Markets: Report on Protecting United States Investors from Significant Risks from Chinese Companies (July 24, 2020), available at https://home.treasury.gov/system/files/136/PWG-Report-on-Protecting-United-States-Investors-from-Significant-Risks-from-Chinese-Companies.pdf. The report noted that the PCAOB has been unable to satisfactorily conduct an inspection of audit work performed in China since 2007.
+
+
+
+[5] In May 2020, the U.S. Senate unanimously passed S. 945, the Holding Foreign Companies Accountable Act; and in July 2020, the U.S. House of Representatives approved H.R. 6395, the National Defense Authorization Act for Fiscal Year 2021, which contains provisions comparable to the Holding Foreign Companies Accountable Act. Additionally, in June 2019, a bipartisan group of lawmakers in the U.S. House of Representatives introduced H.R. 3124, the Ensuring Quality Information and Transparency for Abroad-Based Listings on our Exchanges (EQUITABLE) Act. If any of these bills are enacted into law, the SEC would be required to prohibit trading in a company’s securities if the company’s auditor has not been subject to PCAOB inspection for three consecutive years.
+
+
+
+[6] See President’s Working Group Report supra Note 4.
+
+
+
+[7] See National Development and Reform Commission and the Ministry of Commerce, Special Administrative Measures on Access to Foreign Investment (June 2020).
+
+
+
+[8] A foreign private issuer is any foreign issuer other than a foreign government, except for an issuer that (1) has more than 50% of its outstanding voting securities directly or indirectly held of record by U.S. residents; and (2) any of the following: (i) a majority of its executive officers or directors are citizens or residents of the United States; (ii) more than 50% of its assets are located in the United States; or (iii) its business is principally administered in the United States. See 17 CFR 230.405. See also 17 CFR 240.3b-4(c).
+
+
+
+[9] References to U.S. domestic issuers or domestic issuers generally include foreign issuers that do not qualify as foreign private issuers.
+
+
+
+[10] General Instruction F to Form 20-F defines “home country” as the jurisdiction in which the company is legally organized, incorporated, or established and, if different, the jurisdiction where it has its principal listing.
+
+
+
+[11] One approach to providing this disclosure may be a table comparing differences in corporate governance practices between domestic issuers and foreign private issuers and how those differences impact investors.
+
+
+
+      
+                          
+
+              
+                
+          
+        
+                              
+
+          
+		
+                
+          
+        
+              
+            
+
+    
+          Modified: Nov. 23, 2020
+      
+  
+
+
+  
+
+  
+
+
+        
+      
+        
+      
+      
+
+      
+    
+    
+    
+                  
+                  
+              
+    
+
+  
+    
+        STAY CONNECTED
+1 Twitter 2 Facebook 3RSS 4YouTube
+6LinkedIn  8 Email Updates 
+
+  
+
+  
+
+
+          
+                
+        
+          
+    
+            
+  About The SEC
+  
+
+        
+              
+              
+        Budget & Performance
+              
+
+          
+        Careers
+              
+
+          
+        Commission Votes
+              
+
+          
+        Contact
+              
+
+          
+        Contracts
+              
+
+          
+        Data Resources
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Transparency
+  
+
+        
+              
+              
+        Accessibility & Disability
+              
+
+          
+        Diversity & Inclusion
+              
+
+          
+        FOIA
+              
+
+          
+        Inspector General
+              
+
+          
+        No FEAR Act & EEO Data
+              
+
+          
+        Ombudsman
+              
+
+          
+        Whistleblower Protection
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Websites
+  
+
+        
+              
+              
+        Investor.gov
+              
+
+          
+        Related Sites
+              
+
+          
+        USA.gov
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Site Information
+  
+
+        
+              
+              
+        Plain Writing
+              
+
+          
+        Privacy & Security
+              
+
+          
+        Site Map
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+
+        
+      
+        
+                
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "disclosure-considerations-china-based-issuers"});
+      
+        
+
+
+
+
+  
+
+    
+
+    Return to Top
+
+    
+  
+  
+    
+      
+        
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+        
+      
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+      
+      
+    
+  
+
+
+    
+
+
+
+
+  window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"32edb8f179","applicationID":"436723953","transactionName":"ZQZSMBQEXxZZARJeXlxMcQcSDF4LFyYUQkFTD2wKCQFUOXsNCENDXQ9cARQ5fwpcBzBeVEUgXwoSF14JVAcUGg9EClUT","queueTime":0,"applicationTime":481,"atts":"SUFRRlweTBg=","errorBeacon":"bam.nr-data.net","agent":""}
+  

@@ -1,0 +1,983 @@
+
+    (window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"32edb8f179",applicationID:"436723953"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    SEC.gov | Filing Review Process
+    window.env = "production";
+    
+
+
+    {"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/92096","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":".*\\.gov|http:\/\/www.xbrl.org\/utr\/2013-05-17\/utr.xml|http:\/\/www.xbrl.org\/dtr\/type\/numeric-2009-12-16.xsd|http:\/\/www.xbrl.org\/dtr\/type\/nonNumeric-2009-12-16.xsd|https:\/\/secir.secure.force.com\/ombudsman\/OMMSForm","extInclude":"","extCssExclude":".data-exempt","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving the SEC Website. The link you have selected is located on another server. Please click on the OK button below to proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"user":{"uid":0,"permissionsHash":"04c00260856b47a8f01845e15ffeca03669183d8466dd7ddc4290c568154092e"}}
+
+
+  
+  
+
+    
+      Skip to main content
+    
+    
+      
+    
+
+
+
+
+  
+    
+      
+        
+    
+
+  
+    
+        
+
+
+
+Search SEC.gov      
+
+
+
+
+Company Filings 
+
+
+
+  
+
+  
+    
+      
+            
+      
+    
+    
+      
+    
+  
+  
+    
+      U.S. Securities and Exchange Commission
+  
+   
+
+    
+    q
+  
+
+    
+  
+
+  
+
+
+      
+
+      
+
+        
+            
+    
+  
+    
+      
+            
+          
+    
+              
+                          
+                About
+                                
+                          
+                Careers
+              
+                    
+                Commissioners
+              
+                    
+                Contact
+              
+                    
+                Reports and Publications
+              
+                    
+                Securities Laws
+              
+                    
+                What We Do
+              
+        
+  
+              
+                    
+                Divisions & Offices
+                                
+                          
+                Corporation Finance
+              
+                    
+                Enforcement
+              
+                    
+                Investment Management
+              
+                    
+                Economic and Risk Analysis
+              
+                    
+                Trading and Markets
+              
+                    
+                Office of Administrative Law Judges
+              
+                    
+                Examinations
+              
+                    
+                Regional Offices
+              
+                    
+                All Divisions and Offices
+              
+        
+  
+              
+                    
+                Enforcement
+                                
+                          
+                Litigation Releases
+              
+                    
+                Administrative Proceedings
+              
+                    
+                Opinions and Adjudicatory Orders
+              
+                    
+                Accounting and Auditing
+              
+                    
+                Trading Suspensions
+              
+                    
+                How Investigations Work
+              
+                    
+                Receiverships
+              
+                    
+                Information for Harmed Investors
+              
+        
+  
+              
+                    
+                Regulation
+                                
+                          
+                Rulemaking Index
+              
+                    
+                Proposed Rules
+              
+                    
+                Final Rules
+              
+                    
+                Interim Final Temporary Rules
+              
+                    
+                Other Orders and Notices
+              
+                    
+                Self-Regulatory Organizations
+              
+                    
+                Staff Interpretations
+              
+        
+  
+              
+                    
+                Education
+                                
+                          
+                Investor Education
+              
+                    
+                Small Business Capital Raising 
+              
+                    
+                Glossaries
+              
+        
+  
+              
+                    
+                Filings
+                                
+                          
+                EDGAR – Search & Access
+              
+                    
+                EDGAR – Information for Filers
+              
+                    
+                Company Filing Search
+              
+                    
+                How to Search EDGAR
+              
+                    
+                Requesting Public Documents
+              
+                    
+                Forms List
+              
+                    
+                About EDGAR
+              
+        
+  
+              
+                    
+                News
+                                
+                          
+                Press Releases
+              
+                    
+                Speeches and Statements
+              
+                    
+                Spotlight Topics
+              
+                    
+                Upcoming Events
+              
+                    
+                Webcasts
+              
+                    
+                SEC in the News
+              
+                    
+                SEC Videos
+              
+                    
+                Media Gallery
+              
+        
+  
+              
+        
+  
+
+  
+    
+  
+
+            
+  User account menu
+  
+
+        
+              
+        
+            
+              Log in
+              
+
+
+        
+  
+
+
+  
+
+  
+
+
+        
+
+        
+          
+              
+                      
+      
+        U.S. Securities and Exchange Commission
+                                
+                      
+      
+        Divisions & Offices
+              
+
+                  
+      
+        Enforcement
+              
+
+                  
+      
+        Regulation
+              
+
+                  
+      
+        Education
+              
+
+                  
+      
+        Filings
+              
+
+                  
+      
+        Newsroom
+              
+
+        
+  
+              
+
+                  
+      
+        Newsroom
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speehes
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        RSS Feeds
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speeches
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        Social Media
+                                
+                      
+      
+        @SEC_News
+              
+
+                  
+      
+        SEC Channel
+              
+
+                  
+      
+        SEC Photostream
+              
+
+        
+  
+              
+
+        
+  
+
+
+
+                          
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                  
+
+      
+    
+          
+        
+            
+    
+
+  
+
+
+        
+      
+    
+    
+                                
+        
+        
+        
+    
+    
+      
+
+                  
+
+      
+      
+            
+          
+            
+                              
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                      
+
+          
+        
+                    
+
+      
+
+    
+    		
+    
+    
+              
+            
+    
+  
+    
+      
+
+  
+  
+    
+
+    
+                
+
+
+
+
+        
+
+
+  
+        
+            
+                  		        Other
+            		              
+            
+
+
+  
+    
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+    
+    
+      
+        
+      
+      
+        
+      
+      
+        
+      
+    
+    
+    
+  
+
+
+
+              
+              
+                
+        
+        Filing Review Process
+                
+
+        
+        
+                
+              
+      
+      
+            The Division of Corporation Finance selectively reviews filings made under the Securities Act of 1933 and the Securities Exchange Act of 1934 to monitor and enhance compliance with the applicable disclosure and accounting requirements. In its filing reviews, the Division concentrates its resources on critical disclosures that appear to conflict with Commission rules or applicable accounting standards and on disclosure that appears to be materially deficient in explanation or clarity.
+
+The Division does not evaluate the merits of any transaction or determine whether an investment is appropriate for any investor. The Division’s review process is not a guarantee that the disclosure is complete and accurate — responsibility for complete and accurate disclosure lies with the company and others involved in the preparation of a company’s filings.
+
+The Division assigns filings by companies in a particular industry to one of seven offices and conducts its primary review responsibilities through these offices, whose staff members have specialized industry, accounting and disclosure review expertise.
+
+Required and Selective Reviews
+
+As required by the Sarbanes-Oxley Act of 2002, the Division undertakes some level of review of each reporting company at least once every three years and reviews a significant number of companies more frequently. In addition, the Division selectively reviews transactional filings — the documents companies file when they engage in public offerings, business combination transactions and proxy solicitations. To preserve the integrity and effectiveness of the selective review process, the Division does not publicly disclose the criteria it uses to identify companies and filings for review.
+
+Scope of Reviews
+
+If the Division selects a company or a filing for review, the extent of that review will depend on many factors, including the criteria set forth in Section 408 of the Sarbanes-Oxley Act and the factors identified through our selective review criteria. The scope of a review may be:
+
+
+	a full cover-to-cover review in which the staff will examine the entire filing for compliance with the applicable accounting standards and the disclosure requirements of the federal securities laws and regulations;
+	a financial statement review in which the staff will examine the financial statements and related disclosure, such as Management’s Discussion and Analysis of Financial Condition and Results of Operations, for compliance with the applicable accounting standards and the disclosure requirements of the federal securities laws and regulations; or
+	a targeted issue review in which the staff will examine the filing for one or more specific items of disclosure for compliance with the applicable accounting standards and/or the disclosure requirements of the federal securities laws and regulations.
+
+
+Staff Comments
+
+The staff may provide a company with comments where the staff believes a company can significantly enhance its compliance with the applicable requirements. The range of possible comments is broad and depends on the issues that arise in a particular filing review. Through the comment process, the staff may request that a company provide supplemental information to help the staff better understand the company’s disclosure, revise disclosure in a document on file with the SEC, provide additional disclosure in a document on file with the SEC, or provide additional or different disclosure in a future filing with the SEC. The Division completes many filing reviews without issuing comments.
+
+Company Response to Comments
+
+If a company does not understand a comment or the staff’s purpose in issuing it, it should seek clarification from the examiner before it responds. If the company does not understand the comment after discussing it with the examiner, it may wish to speak with the staff member who approved the comment. To make it easier for a company to identify the appropriate people to contact about a filing review, the Division includes the name of the office conducting the review as well as the names and phone numbers of the staff members involved in that review in each of its comment letters.
+
+A company generally responds to each comment in a letter to the staff and, if appropriate, amends its filing(s). A company’s explanation or analysis of an issue will often resolve a comment. Depending on the nature of the issue and the company’s response, the staff may issue additional comments following its review of the company’s response and any related amendments. .
+
+At any time during the filing review process, a company or its representatives may request that the staff reconsider either a previously-issued comment or its view of the company’s response to a comment. The Division does not require companies and their representatives to follow a formal protocol in seeking reconsideration of a staff comment. A company should direct a reconsideration request to the Chief of the office conducting the filing review. The company or its representatives should feel free to involve the Disclosure Program Director, the Division’s Deputy Director or Director at any stage in the filing review process.
+
+The Commission’s Office of the Chief Accountant addresses questions concerning the application of generally accepted accounting principles while the Division resolves matters concerning the age, form and content of financial statements required to be included in a filing. A company or its representatives may involve the Commission’s Office of the Chief Accountant at any stage of a filing review following the standard consultation procedures.
+
+Closing a Filing Review
+
+When a company has resolved all Division comments on a Securities Act registration statement, the company may request that the Commission declare the registration statement effective so that it can proceed with the transaction. When taking that action, the Division, through authority delegated from the Commission, gives public notice on the SEC’s EDGAR system that the registration statement is effective. When a company has resolved all Division comments on an Exchange Act registration statement, a periodic or current report, or a preliminary proxy statement, the Division provides the company with a letter to confirm that its review of the filing is complete.
+
+To increase the transparency of the review process, the Division makes its comment letters and company responses to those comment letters public on the SEC’s EDGAR system no sooner than 20 business days after it has completed its review of a periodic or current report or declared a registration statement effective.
+
+      
+                          
+
+              
+                
+          
+        
+                              
+
+          
+		
+                
+          
+        
+              
+            
+
+    
+          Modified: Sept. 27, 2019
+      
+  
+
+
+  
+
+  
+
+
+        
+      
+        
+      
+      
+
+      
+    
+    
+    
+                  
+                  
+              
+    
+
+  
+    
+        STAY CONNECTED
+1 Twitter 2 Facebook 3RSS 4YouTube
+6LinkedIn  8 Email Updates 
+
+  
+
+  
+
+
+          
+                
+        
+          
+    
+            
+  About The SEC
+  
+
+        
+              
+              
+        Budget & Performance
+              
+
+          
+        Careers
+              
+
+          
+        Commission Votes
+              
+
+          
+        Contact
+              
+
+          
+        Contracts
+              
+
+          
+        Data Resources
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Transparency
+  
+
+        
+              
+              
+        Accessibility & Disability
+              
+
+          
+        Diversity & Inclusion
+              
+
+          
+        FOIA
+              
+
+          
+        Inspector General
+              
+
+          
+        No FEAR Act & EEO Data
+              
+
+          
+        Ombudsman
+              
+
+          
+        Whistleblower Protection
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Websites
+  
+
+        
+              
+              
+        Investor.gov
+              
+
+          
+        Related Sites
+              
+
+          
+        USA.gov
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Site Information
+  
+
+        
+              
+              
+        Plain Writing
+              
+
+          
+        Privacy & Security
+              
+
+          
+        Site Map
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+
+        
+      
+        
+                
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "Filing Review Process - Corp Fin"});
+      
+        
+
+
+
+
+  
+
+    
+
+    Return to Top
+
+    
+  
+  
+    
+      
+        
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+        
+      
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+      
+      
+    
+  
+
+
+    
+
+
+
+
+  window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"32edb8f179","applicationID":"436723953","transactionName":"ZQZSMBQEXxZZARJeXlxMcQcSDF4LFxIHUFRtAFEHDgA=","queueTime":0,"applicationTime":41,"atts":"SUFRRlweTBg=","errorBeacon":"bam.nr-data.net","agent":""}
+  

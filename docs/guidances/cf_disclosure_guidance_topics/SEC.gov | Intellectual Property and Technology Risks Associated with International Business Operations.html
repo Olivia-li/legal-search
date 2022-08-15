@@ -1,0 +1,1021 @@
+
+    (window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"32edb8f179",applicationID:"436723953"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    SEC.gov | Intellectual Property and Technology Risks Associated with International Business Operations
+    window.env = "production";
+    
+
+
+    {"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/229976","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":".*\\.gov|http:\/\/www.xbrl.org\/utr\/2013-05-17\/utr.xml|http:\/\/www.xbrl.org\/dtr\/type\/numeric-2009-12-16.xsd|http:\/\/www.xbrl.org\/dtr\/type\/nonNumeric-2009-12-16.xsd|https:\/\/secir.secure.force.com\/ombudsman\/OMMSForm","extInclude":"","extCssExclude":".data-exempt","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving the SEC Website. The link you have selected is located on another server. Please click on the OK button below to proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"user":{"uid":0,"permissionsHash":"04c00260856b47a8f01845e15ffeca03669183d8466dd7ddc4290c568154092e"}}
+
+
+  
+  
+
+    
+      Skip to main content
+    
+    
+      
+    
+
+
+
+
+  
+    
+      
+        
+    
+
+  
+    
+        
+
+
+
+Search SEC.gov      
+
+
+
+
+Company Filings 
+
+
+
+  
+
+  
+    
+      
+            
+      
+    
+    
+      
+    
+  
+  
+    
+      U.S. Securities and Exchange Commission
+  
+   
+
+    
+    q
+  
+
+    
+  
+
+  
+
+
+      
+
+      
+
+        
+            
+    
+  
+    
+      
+            
+          
+    
+              
+                          
+                About
+                                
+                          
+                Careers
+              
+                    
+                Commissioners
+              
+                    
+                Contact
+              
+                    
+                Reports and Publications
+              
+                    
+                Securities Laws
+              
+                    
+                What We Do
+              
+        
+  
+              
+                    
+                Divisions & Offices
+                                
+                          
+                Corporation Finance
+              
+                    
+                Enforcement
+              
+                    
+                Investment Management
+              
+                    
+                Economic and Risk Analysis
+              
+                    
+                Trading and Markets
+              
+                    
+                Office of Administrative Law Judges
+              
+                    
+                Examinations
+              
+                    
+                Regional Offices
+              
+                    
+                All Divisions and Offices
+              
+        
+  
+              
+                    
+                Enforcement
+                                
+                          
+                Litigation Releases
+              
+                    
+                Administrative Proceedings
+              
+                    
+                Opinions and Adjudicatory Orders
+              
+                    
+                Accounting and Auditing
+              
+                    
+                Trading Suspensions
+              
+                    
+                How Investigations Work
+              
+                    
+                Receiverships
+              
+                    
+                Information for Harmed Investors
+              
+        
+  
+              
+                    
+                Regulation
+                                
+                          
+                Rulemaking Index
+              
+                    
+                Proposed Rules
+              
+                    
+                Final Rules
+              
+                    
+                Interim Final Temporary Rules
+              
+                    
+                Other Orders and Notices
+              
+                    
+                Self-Regulatory Organizations
+              
+                    
+                Staff Interpretations
+              
+        
+  
+              
+                    
+                Education
+                                
+                          
+                Investor Education
+              
+                    
+                Small Business Capital Raising 
+              
+                    
+                Glossaries
+              
+        
+  
+              
+                    
+                Filings
+                                
+                          
+                EDGAR – Search & Access
+              
+                    
+                EDGAR – Information for Filers
+              
+                    
+                Company Filing Search
+              
+                    
+                How to Search EDGAR
+              
+                    
+                Requesting Public Documents
+              
+                    
+                Forms List
+              
+                    
+                About EDGAR
+              
+        
+  
+              
+                    
+                News
+                                
+                          
+                Press Releases
+              
+                    
+                Speeches and Statements
+              
+                    
+                Spotlight Topics
+              
+                    
+                Upcoming Events
+              
+                    
+                Webcasts
+              
+                    
+                SEC in the News
+              
+                    
+                SEC Videos
+              
+                    
+                Media Gallery
+              
+        
+  
+              
+        
+  
+
+  
+    
+  
+
+            
+  User account menu
+  
+
+        
+              
+        
+            
+              Log in
+              
+
+
+        
+  
+
+
+  
+
+  
+
+
+        
+
+        
+          
+              
+                      
+      
+        U.S. Securities and Exchange Commission
+                                
+                      
+      
+        Divisions & Offices
+              
+
+                  
+      
+        Enforcement
+              
+
+                  
+      
+        Regulation
+              
+
+                  
+      
+        Education
+              
+
+                  
+      
+        Filings
+              
+
+                  
+      
+        Newsroom
+              
+
+        
+  
+              
+
+                  
+      
+        Newsroom
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speehes
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        RSS Feeds
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speeches
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        Social Media
+                                
+                      
+      
+        @SEC_News
+              
+
+                  
+      
+        SEC Channel
+              
+
+                  
+      
+        SEC Photostream
+              
+
+        
+  
+              
+
+        
+  
+
+
+
+                          
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                  
+
+      
+    
+          
+        
+            
+    
+
+  
+
+
+        
+      
+    
+    
+                                
+        
+        
+        
+    
+    
+      
+
+                  
+
+      
+      
+            
+          
+            
+                              
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                      
+
+          
+        
+                    
+
+      
+
+    
+    		
+    
+    
+              
+            
+    
+  
+    
+      
+
+  
+  
+    
+
+    
+                
+
+
+
+
+        
+
+
+  
+        
+            
+                  		        Other
+            		              
+            
+
+
+  
+    
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+    
+    
+      
+        
+      
+      
+        
+      
+      
+        
+      
+    
+    
+    
+  
+
+
+
+              
+              
+                
+        
+        Intellectual Property and Technology Risks Associated with International Business Operations
+                
+
+        
+                  
+                            Dec. 18, 2019
+                       
+        
+                
+              
+      
+      
+            Division of Corporation Finance
+Securities and Exchange Commission
+
+CF Disclosure Guidance: Topic No. 8
+
+Date: December 19, 2019
+
+Summary: This guidance provides the Division of Corporation Finance’s views regarding disclosure obligations that companies should consider with respect to intellectual property and technology risks that may occur when they engage in international operations.
+
+Supplementary Information: The statements in this CF Disclosure Guidance represent the views of the Division of Corporation Finance. This guidance is not a rule, regulation or statement of the Securities and Exchange Commission. Further, the Commission has neither approved nor disapproved its content. This guidance, like all staff guidance, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person.
+
+Introduction
+
+The global and technologically interconnected nature of today’s business environment exposes companies to a wide array of evolving risks. Our principles-based disclosure regime, rooted in materiality, recognizes that a variety of new risks may arise over time, and each of these risks may affect different companies in different ways. The Securities and Exchange Commission and its staff have recently issued statements and guidance discussing a number of these risks to assist public companies both in assessing their materiality and in drafting related disclosure that is material to an investment decision.[1] This guidance continues those efforts and addresses risks to technology and intellectual property that may result from conducting business outside the United States, particularly in jurisdictions that do not have comparable levels of protection of corporate proprietary information and assets such as intellectual property, trademarks, trade secrets, know-how and customer information and records.
+
+The increased reliance on technology, coupled with a shift in the composition of many companies’ assets from traditional brick-and-mortar assets towards intangible ones, may expose companies to material risks of theft of proprietary technology and other intellectual property, including technical data, business processes, data sets or other sensitive information. While many companies may face these types of risks, companies that conduct business in certain foreign jurisdictions, house technology, data and intellectual property abroad, or license technology to joint ventures with foreign partners may have more significant exposure.[2]
+
+Companies should consider their disclosure obligations regarding risks related to the potential theft or compromise of data, technology and intellectual property within the context of the federal securities laws and our principles-based disclosure system. The cornerstone of this system is the timely, robust and complete disclosure of material information, where reporting companies provide a comprehensive picture of the material risks they face, allowing investors to make informed investment and voting decisions.[3] Although there is no specific line-item requirement under the federal securities laws to disclose information related to the compromise (or potential compromise) of technology, data or intellectual property, the Commission has made clear that its disclosure requirements apply to a broad range of evolving business risks in the absence of specific requirements.[4] In addition, a number of existing rules or regulations could require disclosure regarding the actual theft or compromise of technology, data or intellectual property if it pertains to assets or intangibles that are material to a company’s business prospects. For example, disclosure may be necessary in management’s discussion and analysis, the business section, legal proceedings, disclosure controls and procedures, and/or financial statements.
+
+Sources of Risk Associated with the Potential Theft of Technology and Intellectual Property
+
+Among the risks faced by companies is the risk of theft of technology, data and intellectual property through a direct intrusion by private parties or foreign actors, including those affiliated with or controlled by state actors. While not exclusive, examples of situations in which technology, data or intellectual property may be stolen or compromised through direct intrusion include cyber intrusions into a company’s computer systems and physical theft through corporate espionage, including with the assistance of insiders.
+
+In addition, a company’s technology, data and intellectual property may be subject to theft or compromise via more indirect routes. For example, a company’s products or components may be reverse engineered by joint venture partners or other parties, including those affiliated with state actors, and the company’s patents subsequently infringed or know-how or trade secrets stolen. Companies may be required to compromise protections or yield rights to technology, data or intellectual property in order to conduct business in or access markets in a foreign jurisdiction, either through formal written agreements or due to legal or administrative requirements in the host nation. By limiting or otherwise negatively impacting a company’s rights to protect its own technology, data or intellectual property, these types of agreements and requirements may impede both the company’s ability to compete today as well as its ability to retain and improve on this intellectual property, thereby inhibiting chances of future success. Examples include:
+
+
+	patent license agreements pursuant to which a foreign licensee retains rights to improvements on the relevant technology, including the ability to sever such improvements and receive a separate patent, and the right to continued use of technology or intellectual property after the patent or license term of use expires;
+	foreign ownership restrictions, such as joint venture requirements and foreign investment restrictions that potentially compromise control over a company’s technology and proprietary information;
+	the use of unusual or idiosyncratic terms favoring foreign persons, including those associated with a foreign government, in technology license agreements, such as access and license provisions, as direct or indirect conditions to conducting business in the foreign jurisdiction; and
+	regulatory requirements that restrict the ability of companies to conduct business, unless they agree to store data locally, use local services or technology in connection with their international operations, or comply with local licensing or administrative approvals that involve the sharing of intellectual property.
+
+
+Assessing and Disclosing Risks Related to Potential Theft or Compromise of Technology and Intellectual Property
+
+We encourage companies to assess the risks related to the potential theft or compromise of their technology, data or intellectual property in connection with their international operations, as well as how the realization of these risks may impact their business, including their financial condition and results of operations, and any effects on their reputation, stock price and long-term value. Where these risks are material to investment and voting decisions, they should be disclosed, and we encourage companies to provide disclosure that allows investors to evaluate these risks through the eyes of management. Importantly, disclosure about these risks should be specifically tailored to a company’s unique facts and circumstances. In this same vein, where a company’s technology, data or intellectual property is being or previously was materially compromised, stolen or otherwise illicitly accessed, hypothetical disclosure of potential risks is not sufficient to satisfy a company’s reporting obligations. We believe that companies should continue to consider this evolving area of risk and evaluate its materiality on an ongoing basis. As companies assess these risks and their related disclosure obligations, questions to consider with respect to their present and future operating plans may include:
+
+
+	Is there a heightened risk to your technology or intellectual property because you have or expect to maintain significant assets or earn a material amount of revenue abroad?
+	Do you operate in an industry or foreign jurisdiction that has caused, or may cause, you to be particularly susceptible to the theft of technology or intellectual property or the forced transfer of technology? Do you believe that your products have been, or may be, subject to counterfeit and sale, including through e-commerce?
+	Have you directly or indirectly transferred or licensed technology or intellectual property to a foreign entity or government, such as through the creation of a joint venture with a foreign entity? Do you store technology or intellectual property locally in a foreign jurisdiction? Are you required to use equipment and services provided by a state actor, including equipment or services that could result in a reduction in protections?
+	Have you entered into a patent or technology license agreement with a foreign entity or government that provides such entity with rights to improvements on the underlying technology and/or rights to continued use of the technology following the licensing term, including in connection with a joint venture?
+	Are you subject to a requirement that foreign parties must be controlling shareholders or hold a majority of shares in a joint venture in which you are involved, or are you involved in a joint venture that is subject to foreign ownership restrictions or requirements that a foreign party retain certain ownership rights?
+	Have you provided access to your technology or intellectual property to a state actor or regulator in connection with foreign regulatory or licensing procedures, including but not limited to local licensing and administrative procedures?
+	Have you been required to yield rights to technology or intellectual property as a condition to conducting business in or accessing markets located in a foreign jurisdiction?
+	Are you operating in foreign jurisdictions where the ability to enforce rights over intellectual property is limited as a statutory or practical matter?
+	Do you conduct business in a foreign jurisdiction or through a joint venture that may be subject to state secrecy or other laws, such as those limiting or prohibiting the export of data or financial documentation? Are you able to readily produce data or other information that is housed internationally in response to regulatory requirements or inquiries?
+	Have conditions in a foreign jurisdiction caused you to relocate or consider relocating your operations to a different host nation? Have you considered related material costs, such as costs to train new employees, establish new facilities and supply chains, and the impact of any related gaps or lags in production, manufacture and/or export of your products?
+	Do you have controls and procedures in place to adequately protect technology and intellectual property from potential compromise or theft? Do these policies and procedures enable you to identify risks and incidents, analyze the impact on your business, respond expediently, appropriately and effectively when incidents occur and repair any damage caused by such incidents? Are your controls and procedures designed to detect:
+	
+		malfeasance by employees, contractors or other insiders who may have access to your technology and intellectual property;
+		industrial, corporate or other espionage events;
+		unauthorized intrusions into commercial computer networks; and
+		other forms of theft and cyber-theft of your technology and intellectual property?
+	
+	
+	What level of risk oversight and management does the board of directors and executive officers have with regard to the company’s data, technology and intellectual property and how these assets may be impacted by operations in foreign jurisdictions where they may be subject to additional risks? What knowledge do these individuals have about these risks and what role do they have in responding if and when an issue arises?
+
+
+
+
+
+[1] See, e.g., Commission Statement and Guidance on Public Company Cybersecurity Disclosures, Release No. 33-10459 (Feb. 26, 2018), available at https://www.sec.gov/rules/interp/2018/33-10459.pdf; William Hinman, Director, Division of Corporation Finance, Applying a Principles-Based Approach to Disclosing Complex, Uncertain and Evolving Risks (Mar. 15, 2019), available at https://www.sec.gov/news/speech/hinman-applying-principles-based-approach-disclosure-031519; Staff Statement on LIBOR Transition, Division of Corporation Finance, Division of Investment Management, Division of Trading and Markets, and Office of the Chief Accountant (July 12, 2019), available at https://www.sec.gov/news/public-statement/libor-transition. See also Chairman Jay Clayton, SEC Rulemaking Over the Past Year, the Road Ahead and Challenges Posed by Brexit, LIBOR Transition and Cybersecurity Risks (Dec. 6, 2018), available at https://www.sec.gov/news/speech/speech-clayton-120618.
+
+
+
+[2] See, e.g., 2019 Special 301 Report, Office of the United States Trade Representative (April 2019), available at https://ustr.gov/sites/default/files/2019_Special_301_Report.pdf; Update to the IP Commission Report, The Theft of American Intellectual Property: Reassessments of the Challenge and United States Policy (Feb. 2017), available at http://ipcommission.org/report/IP_Commission_Report_Update_2017.pdf; U.S. Chamber of Commerce International IP Index, Global Innovation Policy Center (Feb. 2019), available at https://www.theglobalipcenter.com/wp-content/uploads/2019/03/023593_GIPC_IP_Index_2019_Full_04.pdf.
+
+
+
+[3] Companies must disclose “such further material information, if any, as may be necessary to make the required statements, in the light of the circumstances under which they are made, not misleading.” See Securities Act Rule 408 and Exchange Act Rule 12b-20.
+
+
+
+[4] For example, the Commission has highlighted that although no existing disclosure requirement specifically refers to cybersecurity risks and cyber incidents, a number of requirements may impose an obligation on companies to disclose such risks and incidents. See Commission Statement and Guidance on Public Company Cybersecurity Disclosures, Release No. 33-10459 (Feb. 26, 2018), available at https://www.sec.gov/rules/interp/2018/33-10459.pdf.
+
+
+
+      
+                          
+
+              
+                
+          
+        
+                              
+
+          
+		
+                
+          
+        
+              
+            
+
+    
+          Modified: Dec. 19, 2019
+      
+  
+
+
+  
+
+  
+
+
+        
+      
+        
+      
+      
+
+      
+    
+    
+    
+                  
+                  
+              
+    
+
+  
+    
+        STAY CONNECTED
+1 Twitter 2 Facebook 3RSS 4YouTube
+6LinkedIn  8 Email Updates 
+
+  
+
+  
+
+
+          
+                
+        
+          
+    
+            
+  About The SEC
+  
+
+        
+              
+              
+        Budget & Performance
+              
+
+          
+        Careers
+              
+
+          
+        Commission Votes
+              
+
+          
+        Contact
+              
+
+          
+        Contracts
+              
+
+          
+        Data Resources
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Transparency
+  
+
+        
+              
+              
+        Accessibility & Disability
+              
+
+          
+        Diversity & Inclusion
+              
+
+          
+        FOIA
+              
+
+          
+        Inspector General
+              
+
+          
+        No FEAR Act & EEO Data
+              
+
+          
+        Ombudsman
+              
+
+          
+        Whistleblower Protection
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Websites
+  
+
+        
+              
+              
+        Investor.gov
+              
+
+          
+        Related Sites
+              
+
+          
+        USA.gov
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Site Information
+  
+
+        
+              
+              
+        Plain Writing
+              
+
+          
+        Privacy & Security
+              
+
+          
+        Site Map
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+
+        
+      
+        
+                
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "risks-technology-intellectual-property-international-business-operations"});
+      
+        
+
+
+
+
+  
+
+    
+
+    Return to Top
+
+    
+  
+  
+    
+      
+        
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+        
+      
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+      
+      
+    
+  
+
+
+    
+
+
+
+
+  window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"32edb8f179","applicationID":"436723953","transactionName":"ZQZSMBQEXxZZARJeXlxMcQcSDF4LFxIHUFRtAFEHDgA=","queueTime":0,"applicationTime":39,"atts":"SUFRRlweTBg=","errorBeacon":"bam.nr-data.net","agent":""}
+  

@@ -1,0 +1,1058 @@
+
+    (window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"32edb8f179",applicationID:"436723953"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    SEC.gov | Coronavirus (COVID-19) — Disclosure Considerations Regarding Operations, Liquidity, and Capital Resources
+    window.env = "production";
+    
+
+
+    {"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/263926","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":".*\\.gov|http:\/\/www.xbrl.org\/utr\/2013-05-17\/utr.xml|http:\/\/www.xbrl.org\/dtr\/type\/numeric-2009-12-16.xsd|http:\/\/www.xbrl.org\/dtr\/type\/nonNumeric-2009-12-16.xsd|https:\/\/secir.secure.force.com\/ombudsman\/OMMSForm","extInclude":"","extCssExclude":".data-exempt","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving the SEC Website. The link you have selected is located on another server. Please click on the OK button below to proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"user":{"uid":0,"permissionsHash":"04c00260856b47a8f01845e15ffeca03669183d8466dd7ddc4290c568154092e"}}
+
+
+  
+  
+
+    
+      Skip to main content
+    
+    
+      
+    
+
+
+
+
+  
+    
+      
+        
+    
+
+  
+    
+        
+
+
+
+Search SEC.gov      
+
+
+
+
+Company Filings 
+
+
+
+  
+
+  
+    
+      
+            
+      
+    
+    
+      
+    
+  
+  
+    
+      U.S. Securities and Exchange Commission
+  
+   
+
+    
+    q
+  
+
+    
+  
+
+  
+
+
+      
+
+      
+
+        
+            
+    
+  
+    
+      
+            
+          
+    
+              
+                          
+                About
+                                
+                          
+                Careers
+              
+                    
+                Commissioners
+              
+                    
+                Contact
+              
+                    
+                Reports and Publications
+              
+                    
+                Securities Laws
+              
+                    
+                What We Do
+              
+        
+  
+              
+                    
+                Divisions & Offices
+                                
+                          
+                Corporation Finance
+              
+                    
+                Enforcement
+              
+                    
+                Investment Management
+              
+                    
+                Economic and Risk Analysis
+              
+                    
+                Trading and Markets
+              
+                    
+                Office of Administrative Law Judges
+              
+                    
+                Examinations
+              
+                    
+                Regional Offices
+              
+                    
+                All Divisions and Offices
+              
+        
+  
+              
+                    
+                Enforcement
+                                
+                          
+                Litigation Releases
+              
+                    
+                Administrative Proceedings
+              
+                    
+                Opinions and Adjudicatory Orders
+              
+                    
+                Accounting and Auditing
+              
+                    
+                Trading Suspensions
+              
+                    
+                How Investigations Work
+              
+                    
+                Receiverships
+              
+                    
+                Information for Harmed Investors
+              
+        
+  
+              
+                    
+                Regulation
+                                
+                          
+                Rulemaking Index
+              
+                    
+                Proposed Rules
+              
+                    
+                Final Rules
+              
+                    
+                Interim Final Temporary Rules
+              
+                    
+                Other Orders and Notices
+              
+                    
+                Self-Regulatory Organizations
+              
+                    
+                Staff Interpretations
+              
+        
+  
+              
+                    
+                Education
+                                
+                          
+                Investor Education
+              
+                    
+                Small Business Capital Raising 
+              
+                    
+                Glossaries
+              
+        
+  
+              
+                    
+                Filings
+                                
+                          
+                EDGAR – Search & Access
+              
+                    
+                EDGAR – Information for Filers
+              
+                    
+                Company Filing Search
+              
+                    
+                How to Search EDGAR
+              
+                    
+                Requesting Public Documents
+              
+                    
+                Forms List
+              
+                    
+                About EDGAR
+              
+        
+  
+              
+                    
+                News
+                                
+                          
+                Press Releases
+              
+                    
+                Speeches and Statements
+              
+                    
+                Spotlight Topics
+              
+                    
+                Upcoming Events
+              
+                    
+                Webcasts
+              
+                    
+                SEC in the News
+              
+                    
+                SEC Videos
+              
+                    
+                Media Gallery
+              
+        
+  
+              
+        
+  
+
+  
+    
+  
+
+            
+  User account menu
+  
+
+        
+              
+        
+            
+              Log in
+              
+
+
+        
+  
+
+
+  
+
+  
+
+
+        
+
+        
+          
+              
+                      
+      
+        U.S. Securities and Exchange Commission
+                                
+                      
+      
+        Divisions & Offices
+              
+
+                  
+      
+        Enforcement
+              
+
+                  
+      
+        Regulation
+              
+
+                  
+      
+        Education
+              
+
+                  
+      
+        Filings
+              
+
+                  
+      
+        Newsroom
+              
+
+        
+  
+              
+
+                  
+      
+        Newsroom
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speehes
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        RSS Feeds
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speeches
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        Social Media
+                                
+                      
+      
+        @SEC_News
+              
+
+                  
+      
+        SEC Channel
+              
+
+                  
+      
+        SEC Photostream
+              
+
+        
+  
+              
+
+        
+  
+
+
+
+                          
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                  
+
+      
+    
+          
+        
+            
+    
+
+  
+
+
+        
+      
+    
+    
+                                
+        
+        
+        
+    
+    
+      
+
+                  
+
+      
+      
+            
+          
+            
+                              
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                      
+
+          
+        
+                    
+
+      
+
+    
+    		
+    
+    
+              
+            
+    
+  
+    
+      
+
+  
+  
+    
+
+    
+                
+
+
+
+
+        
+
+
+  
+        
+            
+                  		        Other
+            		              
+            
+
+
+  
+    
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+    
+    
+      
+        
+      
+      
+        
+      
+      
+        
+      
+    
+    
+    
+  
+
+
+
+              
+              
+                
+        
+        Coronavirus (COVID-19) — Disclosure Considerations Regarding Operations, Liquidity, and Capital Resources
+                
+
+        
+                  
+                            June 23, 2020
+                       
+        
+                
+              
+      
+      
+            Division of Corporation Finance
+Securities and Exchange Commission
+
+CF Disclosure Guidance: Topic No. 9A
+
+Date: June 23, 2020
+
+Summary: This guidance provides additional views of the Division of Corporation Finance regarding operations, liquidity, and capital resources disclosures companies should consider with respect to business and market disruptions related to COVID-19.
+
+Supplemental Information: The statements in this CF Disclosure Guidance represent the views of the Division of Corporation Finance. This guidance is not a rule, regulation or statement of the Securities and Exchange Commission. Further, the Commission has neither approved nor disapproved its content. This guidance, like all staff guidance, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person.
+
+Introduction
+
+The Division continues to monitor how companies are disclosing the effects and risks of COVID-19 on their businesses, financial condition, and results of operations and is supplementing CF Disclosure Guidance Topic No. 9 with guidance regarding additional disclosure considerations. We continue to encourage companies to provide disclosures that allow investors to evaluate the current and expected impact of COVID-19 through the eyes of management and to proactively revise and update disclosures as facts and circumstances change. These disclosures should enable an investor to understand how management and the Board of Directors are analyzing the current and expected impact of COVID-19 on the company’s operations and financial condition, including liquidity and capital resources.
+
+Ongoing Assessment of the Impact of COVID-19
+
+Operations, Liquidity, and Capital Resources
+
+Companies have undertaken and are generally in the process of making a diverse range of operational adjustments in response to the effects of COVID-19. These adjustments are numerous and include a transition to telework; supply chain and distribution adjustments; and suspending or modifying certain operations to comply with health and safety guidelines to protect employees, contractors, and customers, including in connection with a transition back to the workplace. These types of adjustments may have an effect on a company that would be material to an investment or voting decision, and affected companies should carefully consider their obligations to disclose this information to investors.[1] Companies also are undertaking a diverse and sometimes complex range of financing activities in response to the effects of COVID-19 on their businesses and markets. These activities may involve obtaining and utilizing credit facilities, accessing public and private markets, implementing supplier finance programs, and negotiating new or modified customer payment terms. These funding sources may include novel terms and structures. It is important that companies provide robust and transparent disclosures about how they are dealing with short- and long-term liquidity and funding risks in the current economic environment, particularly to the extent efforts present new risks or uncertainties to their businesses. While we have observed companies making some of these disclosures in their earnings releases, we encourage companies to evaluate whether any of the information, in light of its potential materiality, should also be included in MD&A.
+
+Considerations
+
+As companies analyze their specific facts and circumstances and consider their disclosure obligations, we encourage them to consider a broad range of questions, including:
+
+
+	What are the material operational challenges that management and the Board of Directors are monitoring and evaluating? How and to what extent have you altered your operations, such as implementing health and safety policies for employees, contractors, and customers, to deal with these challenges, including challenges related to employees returning to the workplace? How are the changes impacting or reasonably likely to impact your financial condition and short- and long-term liquidity?
+	How is your overall liquidity position and outlook evolving? To the extent COVID-19 is adversely impacting your revenues, consider whether such impacts are material to your sources and uses of funds, as well as the materiality of any assumptions you make about the magnitude and duration of COVID-19’s impact on your revenues. Are any decreases in cash flow from operations having a material impact on your liquidity position and outlook?
+	Have you accessed revolving lines of credit or raised capital in the public or private markets to address your liquidity needs? Are your disclosures regarding these actions and any unused liquidity sources providing investors with a complete discussion of your financial condition and liquidity?
+	Have COVID-19 related impacts affected your ability to access your traditional funding sources on the same or reasonably similar terms as were available to you in recent periods? Have you provided additional collateral, guarantees, or equity to obtain funding? Have there been material changes in your cost of capital? How has a change, or a potential change, to your credit rating impacted your ability to access funding? Do your financing arrangements contain terms that limit your ability to obtain additional funding? If so, is the uncertainty of additional funding reasonably likely to result in your liquidity decreasing in a way that would result in you being unable to maintain current operations?
+	Are you at material risk of not meeting covenants in your credit and other agreements?
+	If you include metrics, such as cash burn rate or daily cash use, in your disclosures, are you providing a clear definition of the metric and explaining how management uses the metric in managing or monitoring liquidity?[2] Are there estimates or assumptions underlying such metrics the disclosure of which is necessary for the metric not to be misleading?
+	Have you reduced your capital expenditures and if so, how? Have you reduced or suspended share repurchase programs or dividend payments? Have you ceased any material business operations or disposed of a material asset or line of business? Have you materially reduced or increased your human capital resource expenditures? Are any of these measures temporary in nature, and if so, how long do you expect to maintain them? What factors will you consider in deciding to extend or curtail these measures? What is the short- and long-term impact of these reductions on your ability to generate revenues and meet existing and future financial obligations?
+	Are you able to timely service your debt and other obligations? Have you taken advantage of available payment deferrals, forbearance periods, or other concessions? What are those concessions and how long will they last? Do you foresee any liquidity challenges once those accommodations end?
+	Have you altered terms with your customers, such as extended payment terms or refund periods, and if so, how have those actions materially affected your financial condition or liquidity? Did you provide concessions or modify terms of arrangements as a landlord or lender that will have a material impact? Have you modified other contractual arrangements in response to COVID-19 in such a way that the revised terms may materially impact your financial condition, liquidity, and capital resources?
+	Are you relying on supplier finance programs, otherwise referred to as supply chain financing, structured trade payables, reverse factoring, or vendor financing, to manage your cash flow? Have these arrangements had a material impact on your balance sheet, statement of cash flows, or short- and long-term liquidity and if so, how?[3] What are the material terms of the arrangements? Did you or any of your subsidiaries provide guarantees related to these programs? Do you face a material risk if a party to the arrangement terminates it? What amounts payable at the end of the period relate to these arrangements, and what portion of these amounts has an intermediary already settled for you?
+	Have you assessed the impact material events that occurred after the end of the reporting period, but before the financial statements were issued, have had or are reasonably likely to have on your liquidity and capital resources and considered whether disclosure of subsequent events in the financial statements and known trends or uncertainties in MD&A is required?
+
+
+Government Assistance – The Coronavirus Aid, Relief, and Economic Security Act (CARES Act)[4]
+
+The CARES Act includes financial assistance for companies in the form of loans[5] and tax relief in the form of deferred or reduced payments and potential refunds.[6] Companies receiving federal assistance should consider the short- and long-term impact of that assistance on their financial condition, results of operations, liquidity, and capital resources, as well as the related disclosures and critical accounting estimates and assumptions.[7] Questions to consider include:[8]
+
+
+	How does a loan impact your financial condition, liquidity and capital resources? What are the material terms and conditions of any assistance you received, and do you anticipate being able to comply with them? Do those terms and conditions limit your ability to seek other sources of financing or affect your cost of capital? Do you reasonably expect restrictions, such as maintaining certain employment levels, to have a material impact on your revenues or income from continuing operations or to cause a material change in the relationship between costs and revenues? Once any such restrictions lapse, do you expect to change your operations in a material way?
+	Are you taking advantage of any recent tax relief, and if so, how does that relief impact your short- and long-term liquidity? Do you expect a material tax refund for prior periods?
+	Does the assistance involve new material accounting estimates or judgments that should be disclosed or materially change a prior critical accounting estimate? What accounting estimates were made, such as the probability a loan will be forgiven, and what uncertainties are involved in applying the related accounting guidance?[9]
+
+
+A Company’s Ability to Continue as a Going Concern
+
+Management should consider whether conditions and events, taken as a whole, raise substantial doubt about the company’s ability to meet its obligations as they become due within one year after the issuance of the financial statements.[10] Where there is substantial doubt about a company’s ability to continue as a going concern or the substantial doubt is alleviated by management’s plans, management should provide the appropriate respective disclosures in the financial statements[11] and consider the following questions regarding the MD&A disclosure:
+
+
+	Are there conditions and events that give rise to the substantial doubt about the company’s ability to continue as a going concern? For example, have you defaulted on outstanding obligations? Have you faced labor challenges or a work stoppage?
+	What are your plans to address these challenges? Have you implemented any portion of those plans?
+
+
+Additional Information
+
+As we discussed in CF Disclosure Guidance Topic No. 9, COVID-19 may materially impact a number of disclosures that a company should consider, such as disclosure controls and procedures and internal control over financial reporting.
+
+For additional information on accounting and auditing matters related to COVID-19, refer to SEC Chief Accountant Sagar Teotia’s Statement on the Continued Importance of High-Quality Financial Reporting for Investors in Light of COVID-19.
+
+
+
+
+[1] While SEC rules do not specify metrics or line item requirements for such adjustments, we expect companies to consider their obligation to provide such disclosures within the context of our principles-based disclosure system. Such disclosures should reflect how management and the Board of Directors are assessing operational issues.
+
+
+
+[2] See Commission Guidance on Management’s Discussion and Analysis of Financial Condition and Results of Operations, Release No. 33-10751 (Jan. 30, 2020), available at https://www.sec.gov/rules/interp/2020/33-10751.pdf.
+
+
+
+[3] These programs vary widely in their terms and structures and often involve an intermediary, such as a financial institution. Companies should determine the appropriate balance sheet and cash flow classifications of obligations related to the programs, which also may impact how the programs are discussed in MD&A.
+
+
+
+[4] See the Coronavirus Aid, Relief, and Economic Security Act, available at https://www.congress.gov/116/bills/hr748/BILLS-116hr748enr.pdf.
+
+
+
+[5] Certain loans under the CARES Act programs may be forgiven.
+
+
+
+
+
+[6] The CARES Act delays certain payroll taxes until 2021 and 2022. It also eliminates the taxable income limit for certain net operating losses (NOLs), permits carrybacks of NOLs, accelerates the refund schedule for alternative minimum tax credits, and increases the percentage of adjusted taxable income that can be offset by interest expense deductions. These are examples of relief that may result in a tax refund for prior periods or reduction in current tax payments.
+
+
+
+[7] Companies should provide required U.S. GAAP disclosures related to any assistance received under the CARES Act, including the accounting principles followed and the methods of applying those principles if they materially affect financial condition, cash flows, or results of operations and related disclosures.
+
+
+
+[8] These considerations also apply to foreign private issuers that receive assistance from their home country.
+
+
+
+[9] For example, the SEC staff would not object to a company accounting for a loan obtained under the Paycheck Protection Program in Section 1102 of the CARES Act as either (i) debt pursuant to ASC 470, or (ii) as a government grant by analogy to IAS 20, provided certain conditions are met (e.g., that it is probable that the registrant will meet the terms for forgiveness of the loan).
+
+
+
+[10] Management’s evaluation should be based on relevant conditions and events that are known and reasonably knowable at the date the financial statements are issued. The evaluation initially shall not take into consideration the potential mitigating effect of management’s plans that have not been fully implemented. See ASC 205-40.
+
+
+
+[11] See FASB ASC Topic 205-40-50. Among other things, U.S. GAAP requires disclosures about whether there is substantial doubt about a company’s ability to continue as a going concern, the conditions and events that raise such doubt, management’s evaluation of those conditions or events, and any plans to alleviate such doubt.
+
+
+
+      
+                          
+
+              
+                
+          
+        
+                              
+
+          
+		
+                
+          
+        
+              
+            
+
+    
+          Modified: June 23, 2020
+      
+  
+
+
+  
+
+  
+
+
+        
+      
+        
+      
+      
+
+      
+    
+    
+    
+                  
+                  
+              
+    
+
+  
+    
+        STAY CONNECTED
+1 Twitter 2 Facebook 3RSS 4YouTube
+6LinkedIn  8 Email Updates 
+
+  
+
+  
+
+
+          
+                
+        
+          
+    
+            
+  About The SEC
+  
+
+        
+              
+              
+        Budget & Performance
+              
+
+          
+        Careers
+              
+
+          
+        Commission Votes
+              
+
+          
+        Contact
+              
+
+          
+        Contracts
+              
+
+          
+        Data Resources
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Transparency
+  
+
+        
+              
+              
+        Accessibility & Disability
+              
+
+          
+        Diversity & Inclusion
+              
+
+          
+        FOIA
+              
+
+          
+        Inspector General
+              
+
+          
+        No FEAR Act & EEO Data
+              
+
+          
+        Ombudsman
+              
+
+          
+        Whistleblower Protection
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Websites
+  
+
+        
+              
+              
+        Investor.gov
+              
+
+          
+        Related Sites
+              
+
+          
+        USA.gov
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Site Information
+  
+
+        
+              
+              
+        Plain Writing
+              
+
+          
+        Privacy & Security
+              
+
+          
+        Site Map
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+
+        
+      
+        
+                
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "covid-19-disclosure-considerations"});
+      
+        
+
+
+
+
+  
+
+    
+
+    Return to Top
+
+    
+  
+  
+    
+      
+        
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+        
+      
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+      
+      
+    
+  
+
+
+    
+
+
+
+
+  window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"32edb8f179","applicationID":"436723953","transactionName":"ZQZSMBQEXxZZARJeXlxMcQcSDF4LFxIHUFRtAFEHDgA=","queueTime":0,"applicationTime":51,"atts":"SUFRRlweTBg=","errorBeacon":"bam.nr-data.net","agent":""}
+  

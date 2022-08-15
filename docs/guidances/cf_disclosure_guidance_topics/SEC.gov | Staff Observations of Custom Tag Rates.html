@@ -1,0 +1,1155 @@
+
+    (window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"32edb8f179",applicationID:"436723953"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    SEC.gov | Staff Observations of Custom Tag Rates
+    window.env = "production";
+    
+
+
+    {"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/92391","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":".*\\.gov|http:\/\/www.xbrl.org\/utr\/2013-05-17\/utr.xml|http:\/\/www.xbrl.org\/dtr\/type\/numeric-2009-12-16.xsd|http:\/\/www.xbrl.org\/dtr\/type\/nonNumeric-2009-12-16.xsd|https:\/\/secir.secure.force.com\/ombudsman\/OMMSForm","extInclude":"","extCssExclude":".data-exempt","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving the SEC Website. The link you have selected is located on another server. Please click on the OK button below to proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"user":{"uid":0,"permissionsHash":"04c00260856b47a8f01845e15ffeca03669183d8466dd7ddc4290c568154092e"}}
+
+
+  
+  
+
+    
+      Skip to main content
+    
+    
+      
+    
+
+
+
+
+  
+    
+      
+        
+    
+
+  
+    
+        
+
+
+
+Search SEC.gov      
+
+
+
+
+Company Filings 
+
+
+
+  
+
+  
+    
+      
+            
+      
+    
+    
+      
+    
+  
+  
+    
+      U.S. Securities and Exchange Commission
+  
+   
+
+    
+    q
+  
+
+    
+  
+
+  
+
+
+      
+
+      
+
+        
+            
+    
+  
+    
+      
+            
+          
+    
+              
+                          
+                About
+                                
+                          
+                Careers
+              
+                    
+                Commissioners
+              
+                    
+                Contact
+              
+                    
+                Reports and Publications
+              
+                    
+                Securities Laws
+              
+                    
+                What We Do
+              
+        
+  
+              
+                    
+                Divisions & Offices
+                                
+                          
+                Corporation Finance
+              
+                    
+                Enforcement
+              
+                    
+                Investment Management
+              
+                    
+                Economic and Risk Analysis
+              
+                    
+                Trading and Markets
+              
+                    
+                Office of Administrative Law Judges
+              
+                    
+                Examinations
+              
+                    
+                Regional Offices
+              
+                    
+                All Divisions and Offices
+              
+        
+  
+              
+                    
+                Enforcement
+                                
+                          
+                Litigation Releases
+              
+                    
+                Administrative Proceedings
+              
+                    
+                Opinions and Adjudicatory Orders
+              
+                    
+                Accounting and Auditing
+              
+                    
+                Trading Suspensions
+              
+                    
+                How Investigations Work
+              
+                    
+                Receiverships
+              
+                    
+                Information for Harmed Investors
+              
+        
+  
+              
+                    
+                Regulation
+                                
+                          
+                Rulemaking Index
+              
+                    
+                Proposed Rules
+              
+                    
+                Final Rules
+              
+                    
+                Interim Final Temporary Rules
+              
+                    
+                Other Orders and Notices
+              
+                    
+                Self-Regulatory Organizations
+              
+                    
+                Staff Interpretations
+              
+        
+  
+              
+                    
+                Education
+                                
+                          
+                Investor Education
+              
+                    
+                Small Business Capital Raising 
+              
+                    
+                Glossaries
+              
+        
+  
+              
+                    
+                Filings
+                                
+                          
+                EDGAR – Search & Access
+              
+                    
+                EDGAR – Information for Filers
+              
+                    
+                Company Filing Search
+              
+                    
+                How to Search EDGAR
+              
+                    
+                Requesting Public Documents
+              
+                    
+                Forms List
+              
+                    
+                About EDGAR
+              
+        
+  
+              
+                    
+                News
+                                
+                          
+                Press Releases
+              
+                    
+                Speeches and Statements
+              
+                    
+                Spotlight Topics
+              
+                    
+                Upcoming Events
+              
+                    
+                Webcasts
+              
+                    
+                SEC in the News
+              
+                    
+                SEC Videos
+              
+                    
+                Media Gallery
+              
+        
+  
+              
+        
+  
+
+  
+    
+  
+
+            
+  User account menu
+  
+
+        
+              
+        
+            
+              Log in
+              
+
+
+        
+  
+
+
+  
+
+  
+
+
+        
+
+        
+          
+              
+                      
+      
+        U.S. Securities and Exchange Commission
+                                
+                      
+      
+        Divisions & Offices
+              
+
+                  
+      
+        Enforcement
+              
+
+                  
+      
+        Regulation
+              
+
+                  
+      
+        Education
+              
+
+                  
+      
+        Filings
+              
+
+                  
+      
+        Newsroom
+              
+
+        
+  
+              
+
+                  
+      
+        Newsroom
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speehes
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        RSS Feeds
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speeches
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        Social Media
+                                
+                      
+      
+        @SEC_News
+              
+
+                  
+      
+        SEC Channel
+              
+
+                  
+      
+        SEC Photostream
+              
+
+        
+  
+              
+
+        
+  
+
+
+
+                      
+              
+              
+        Office of Structured Disclosure
+              
+
+          
+        Contact OSD
+              
+
+          
+        What is Structured Data?
+              
+
+          
+        History and Rulemaking
+              
+
+          
+        Inline XBRL
+              
+
+          
+        IFRS Taxonomy
+              
+
+          
+        Data 
+                                
+              
+        Library
+              
+
+          
+        Feeds
+              
+
+        
+  
+
+              
+
+          
+        Preparers
+                                
+              
+        EDGAR Filer Manual
+              
+
+          
+        Staff Observations, Guidance, and Trends
+              
+
+        
+  
+
+              
+
+          
+        Technical
+                                
+              
+        Taxonomies
+              
+
+          
+        XBRL Validation and Rendering
+              
+
+          
+        Interactive Data Test Suite
+              
+
+          
+        XBRL Glossary of Terms
+              
+
+        
+  
+
+              
+
+        
+  
+
+
+
+
+
+                  
+
+      
+    
+          
+        
+            
+    
+
+  
+
+
+        
+      
+    
+    
+                                
+        
+        
+        
+    
+    
+      
+
+                  
+
+      
+      
+            
+          
+            
+                          
+              
+              
+        Office of Structured Disclosure
+              
+
+          
+        Contact OSD
+              
+
+          
+        What is Structured Data?
+              
+
+          
+        History and Rulemaking
+              
+
+          
+        Inline XBRL
+              
+
+          
+        IFRS Taxonomy
+              
+
+          
+        Data 
+                                
+              
+        Library
+              
+
+          
+        Feeds
+              
+
+        
+  
+
+              
+
+          
+        Preparers
+                                
+              
+        EDGAR Filer Manual
+              
+
+          
+        Staff Observations, Guidance, and Trends
+              
+
+        
+  
+
+              
+
+          
+        Technical
+                                
+              
+        Taxonomies
+              
+
+          
+        XBRL Validation and Rendering
+              
+
+          
+        Interactive Data Test Suite
+              
+
+          
+        XBRL Glossary of Terms
+              
+
+        
+  
+
+              
+
+        
+  
+
+
+
+
+
+                                                                              
+
+          
+        
+                    
+
+      
+
+    
+    		
+    
+    
+              
+            
+    
+  
+    
+      
+
+  
+  
+    
+
+    
+                
+
+
+
+
+        
+
+
+  
+        
+            
+                              
+              Announcement
+                          
+                  
+            
+
+
+  
+    
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+    
+    
+      
+        
+      
+      
+        
+      
+      
+        
+      
+    
+    
+    
+  
+
+
+
+              
+              
+                
+        
+        Staff Observations of Custom Tag Rates
+                
+
+        
+                  
+                            July 7, 2014
+                       
+        
+                
+              
+      
+      
+            
+	The staff in the Commission’s Division of Economic and Risk Analysis recently assessed the quality of XBRL exhibits submitted by issuers complying with the 2009 rule requirements to file financial statement information in an XBRL format.1 The scope of the assessment included XBRL exhibits submitted from 2009 through October 2013. The purpose of the assessment was to help define a baseline of filer behavior with respect to filers’ tagging of financial statements in their electronic filings, including how their behavior has evolved following the completion of the full phase-in of issuer and rule requirements. One aspect of the assessment, reported below, focused on the use of custom tags2 to describe elements in the financial statements.
+
+	Staff observed a steady decline in custom tag use by large accelerated filers during the phase-in period and thereafter. This evidence is consistent with both improvements in the taxonomy over this period and filers’ selections of financial elements. However, staff did not observe this same trend among smaller filers.3 In our sampling,4 smaller filers accounted for 96% of filers with high custom tag rates: defined as those with overall custom tag rates of greater than 50%, i.e., more than 50% of the filer’s line item tags were custom tags created by the filer as opposed to standard tags selected from the XBRL U.S. GAAP taxonomy.5 We believe that the continued high custom tag rates among smaller filers may be, in part, due to continued development and growth in the market for filer software and services, resulting in offerings of varying levels of functionality and ease of use. In particular, many of the smaller filers with high custom tag rates used the same three third-party providers to submit their filings.6
+
+	I. BACKGROUND
+
+	In 2009, the Commission adopted regulations that require companies to submit their financial statements with the Commission using the eXtensible Business Reporting Language (XBRL). The current XBRL U.S. GAAP taxonomy contains thousands of standardized financial elements, or “tags,” from which filers may choose. As the Commission has noted, one of the primary benefits of such a comprehensive taxonomy is that it should lower the time and expense required for market participants to aggregate and analyze the reported data.7 In particular, the common taxonomy should promote the comparability of financial information across companies.8
+
+	The rules allow filers to create custom tags when the standard taxonomy does not provide a tag for the necessary financial element. While this customization accommodates unique circumstances in a filer’s particular disclosure, the Commission acknowledged that the use of customized tags could potentially and unnecessarily reduce the comparability of inter-company data, particularly when a suitable standardized tag was otherwise available.9 To lessen this likelihood, the rules specify the limited circumstances under which a filer may create custom tags.10
+
+	When the Commission implemented its 2009 Rule, it believed that some filers were better positioned than others based on cost and experience to submit their financial statements in XBRL.11 As a result, the Commission phased in implementation over the course of three years. In the first year, only the largest filers had to comply.12 In the second year, large filers had to comply.13 And in the third year, 2011, the remaining filers had to comply.14 In addition, the Commission did not require detailed tagging of footnotes until each filer’s second year of compliance.15 By phasing in the requirements based on filer size and the level of tagging detail, the Commission believed that both software and third-party services would develop with sufficient time to meet filers’ needs. Moreover, the phase-in for smaller filers during the third year would permit them to learn from the experience of earlier filers.16
+
+	In the 2009 Rule, the Commission stated that it would check XBRL exhibits for compliance with technical requirements and to help the Commission identify data that may be problematic.17 The Commission staff has previously reported the recurring issue of excessive creation of custom tags in XBRL exhibits through staff observations posted on the SEC’s website.18 With the rule completely phased-in, Commission staff undertook an effort to assess the quality of XBRL exhibits of filers’ financial statements. Our assessment suggests that not all of the Commission’s expectations have been met, particularly as they relate to smaller filers and their custom tag rates. We believe that this is at least, in part, due to continued development and growth in the market for filer software and services, resulting in offerings of varying functionality and ease of use.
+
+	II. STAFF OBSERVATIONS
+
+	Analyzing XBRL exhibits since 2009, figure below,19 reveals a consistent and gradual decline in the use of custom tag rates among the largest filers (phase 1)20 and large filers (phase 2),21 but not smaller filers (phase 3).22 Smaller filers currently have an average custom tag rate almost 50% greater than that of larger filers, inconsistent with our expectation that smaller filers should, as a general matter, have simpler financial statements that are easier to standardize.
+
+	Average Custom Tag Rates by Year (Primary Financial Statements)
+
+	
+
+	Note: Estimates for years 2009 through 2012 are based on a sample of filings submitted in the respective year. 2013 estimates are based on the most recent 2013 filings as of October 30, 2013.
+
+	Analyzing the most recent XBRL exhibits as of October 30, 2013, Commission staff identified a sample of filers with custom tag rates greater than 50%.23 Among these, approximately 96% were smaller filers.24 Analyzing the custom tags of larger filers with high custom tag rates in our sample generally revealed an appropriate use of custom tags—there was no systematic evidence of obvious selection error or unjustified use of custom tags.25 In contrast, we observed systematic evidence of smaller filers in our sample creating a custom tag instead of selecting an available standard tag. We also observed that the average use of custom tags in primary financial statements among larger filers has declined in each year since XBRL exhibits were required, while the custom tag rate in primary financial statements among smaller filers has remained relatively flat during the commensurate phase-in period.
+
+	As part of our assessment, we also observed a strong correlation between third-party provider selection and exhibits with high custom tag rates. In our sample of smaller filers with high custom tag rates, 64% were served by the same third-party providers, of which one third-party provider accounted for 33% of all filers with a high custom tag rate. This suggests that in many instances the high custom tag rate may not be determined by the unique reporting requirements of a filer or available taxonomy, but an artifact of the reporting tool or service used. More generally, and as the figure below shows, there has been a large increase in the number of third-party XBRL providers over time, which tracks the phase-in of smaller filers, growing from 11 in 2009 when the regulations were implemented, to 25 in 2011 when the smaller filers began to file, and approximately 34 in 2013. We recognize that the continued innovation and growth in product offerings may be a contributing factor in continued high custom tag rates among smaller filers.
+
+	Third-Party Provider Increase by Year
+
+	
+
+	Note: Estimates for years 2009 through 2012 are based on all filings submitted in the respective year. 2013 estimates are based on the most recent 2013 filings as of October 30, 2013.
+
+	III. CONCLUSION
+
+	Commission staff intends to continue monitoring the use of custom tags. Depending on the results of this effort, Commission staff may issue further guidance or pursue other action.
+
+	The staff welcomes your questions and comments. Please feel free to call us at (202) 551-5494, or email us at Ask-OID@sec.gov.
+
+	
+	
+	
+		
+			[1] Interactive Data to Improve Financial Reporting, Release No. 33-9002 (Jan. 30, 2009), 74 FR 6776 (Feb. 10, 2009) (“2009 Rule”). As discussed further below, the Commission phased in implementation of the rule for companies over several years based on the size of the company’s public equity float.
+	
+	
+		
+			[2] 17 CFR 232.405(c)(iii).
+	
+	
+		
+			[3] For this assessment, we use the term “smaller filers” to refer to filers who use U.S. GAAP but do not meet the definition of “large accelerated filer.” See 2009 Rule at 43; see also id. at 20 n.70 (“Exchange Act Rule 12b—2 [17 CFR 240.12b—2] generally defines ‘large accelerated filer’ as an issuer that has common equity held by unaffiliated persons with a value of at least $700 million, has been subject to the Exchange Act’s periodic reporting requirements for at least 12 months, has filed at least one annual report, and is not eligible to use the disclosure requirements available to smaller reporting companies for its periodic reports.”).
+	
+	
+		
+			[4] We excluded certain industries which consistently have a higher than average custom tag rate, such as real estate and insurance companies.
+	
+	
+		
+			[5] We observed that of those filers with high overall custom tag rates, most of their custom tags appeared in their financial statement footnotes and not their primary financial statements. Smaller filers have been tagging their financial statement footnotes since Q2 2012. As a result, from our sample as of October 2013, all filers have been tagging their financial statement footnotes for over a year, with some having tagged their footnotes for over two or three years.
+	
+	
+		
+			[6] Nevertheless, companies who rely on a third-party provider to create their XBRL exhibits are responsible for the exhibits’ accuracy and compliance with the filing requirements.
+	
+	
+		
+			[7] See 2009 Rule at 127-29.
+	
+	
+		
+			[8] See id. at 130-31.
+	
+	
+		
+			[9] See id. at 104-05. For example, in the 2009 Rule, we noted that the standard list of tags for U.S. GAAP included the financial statement element “gross profit,” and that an issuer previously reporting “gross margin” should use that standard element, which is definitionally the same, rather than create a custom tag.
+	
+	
+		
+			[10] See id. See also 17 CFR 232.405(c)(iii)(B) (“An electronic filer must create and use a new special element if and only if an appropriate tag does not exist in the standard list of tags for reasons other than or in addition to an inappropriate standard label.”).
+	
+	
+		
+			[11] See 2009 Rule at 43-45.
+	
+	
+		
+			[12] Id. at 39. See also infra note 19.
+	
+	
+		
+			[13] Id. at 22. See also infra note 20.
+	
+	
+		
+			[14] See id. See also infra note 21.
+	
+	
+		
+			[15] Id. at 59.
+	
+	
+		
+			[16] Id. at 45-46.
+	
+	
+		
+			[17] Id. at 81-82.
+	
+	
+		
+			[18] http://www.sec.gov/spotlight/xbrl/staff-review-observations.shtml.
+	
+	
+		
+			[19] Figure updated on July 28, 2014.  Original figure reflected fraction of submissions with at least 25% custom tags on the primary financial statements by year.
+	
+
+
+	
+		
+			[20] 2009 Rule at 39 (“The new rules initially will require interactive data reporting only by domestic and foreign large accelerated filers that prepare their financial statements in accordance with U.S. GAAP and have a worldwide public common equity float above $5 billion as of the end of the second fiscal quarter of their most recently completed fiscal year.”). For this assessment, we use the term “largest filers” to refer to large accelerated filers with over $5 billion in float.
+	
+	
+		
+			[21] Id. at 43 (“All other U.S. GAAP filers that meet the definition of large accelerated filer will be required to provide their initial interactive data submissions in year two of the phase-in period.”). For this assessment, we use the term “large filers” to refer to large accelerated filers with $5 billion or less in worldwide public common equity float.
+	
+	
+		
+			[22] Id. (“All remaining U.S. GAAP filers, including smaller reporting companies and companies not previously subject to periodic reporting requirements, will be required to provide their initial interactive data submissions in year three of the phase-in period.”). For this assessment, we use the term “smaller filers” to refer to all filers who did not have to comply with the reporting requirements until year three of the phase-in period.
+	
+	
+		
+			[23] Our sample of custom tags is of line item tags and excludes tags that are abstract, text-related, member, domain, and document and entity. We also excluded certain industries which consistently have a higher than average custom tag rate, such as real estate and insurance companies.
+	
+	
+		
+			[24] Our estimates are based on the exhibits and calculations available to us as of the time of our assessment, October 2013.
+	
+	
+		
+			[25] While not required, filers are encouraged to include detailed definitions for their custom tags. In general, the larger filers used the same wording in their custom definitions as could be found in similar standard tags already in the taxonomy, but modified the text to indicate a material difference from the standard definition. This demonstrates consideration of standard tags and a desire to justify customization.
+	
+
+
+
+      
+                          
+
+              
+                
+          
+        
+                              
+
+          
+		
+                
+          
+        
+              
+            
+
+    
+          Modified: July 7, 2014
+      
+  
+
+
+  
+
+  
+
+
+        
+      
+        
+      
+      
+
+      
+    
+    
+    
+                  
+                  
+              
+    
+
+  
+    
+        STAY CONNECTED
+1 Twitter 2 Facebook 3RSS 4YouTube
+6LinkedIn  8 Email Updates 
+
+  
+
+  
+
+
+          
+                
+        
+          
+    
+            
+  About The SEC
+  
+
+        
+              
+              
+        Budget & Performance
+              
+
+          
+        Careers
+              
+
+          
+        Commission Votes
+              
+
+          
+        Contact
+              
+
+          
+        Contracts
+              
+
+          
+        Data Resources
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Transparency
+  
+
+        
+              
+              
+        Accessibility & Disability
+              
+
+          
+        Diversity & Inclusion
+              
+
+          
+        FOIA
+              
+
+          
+        Inspector General
+              
+
+          
+        No FEAR Act & EEO Data
+              
+
+          
+        Ombudsman
+              
+
+          
+        Whistleblower Protection
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Websites
+  
+
+        
+              
+              
+        Investor.gov
+              
+
+          
+        Related Sites
+              
+
+          
+        USA.gov
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Site Information
+  
+
+        
+              
+              
+        Plain Writing
+              
+
+          
+        Privacy & Security
+              
+
+          
+        Site Map
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+
+        
+      
+        
+                
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "OSD Announcement 070714 - Staff Observations of Custom Axis Tag"});
+      
+        
+
+
+
+
+  
+
+    
+
+    Return to Top
+
+    
+  
+  
+    
+      
+        
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+        
+      
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+      
+      
+    
+  
+
+
+    
+
+
+
+
+  window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"32edb8f179","applicationID":"436723953","transactionName":"ZQZSMBQEXxZZARJeXlxMcQcSDF4LFxIHUFRtAFEHDgA=","queueTime":0,"applicationTime":41,"atts":"SUFRRlweTBg=","errorBeacon":"bam.nr-data.net","agent":""}
+  
