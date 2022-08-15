@@ -1,0 +1,1084 @@
+
+    (window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"32edb8f179",applicationID:"436723953"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    SEC.gov | Confidential Treatment Applications Submitted Pursuant to Rules 406 and 24b-2
+    window.env = "production";
+    
+
+
+    {"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/229956","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":".*\\.gov|http:\/\/www.xbrl.org\/utr\/2013-05-17\/utr.xml|http:\/\/www.xbrl.org\/dtr\/type\/numeric-2009-12-16.xsd|http:\/\/www.xbrl.org\/dtr\/type\/nonNumeric-2009-12-16.xsd|https:\/\/secir.secure.force.com\/ombudsman\/OMMSForm","extInclude":"","extCssExclude":".data-exempt","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving the SEC Website. The link you have selected is located on another server. Please click on the OK button below to proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"user":{"uid":0,"permissionsHash":"04c00260856b47a8f01845e15ffeca03669183d8466dd7ddc4290c568154092e"}}
+
+
+  
+  
+
+    
+      Skip to main content
+    
+    
+      
+    
+
+
+
+
+  
+    
+      
+        
+    
+
+  
+    
+        
+
+
+
+Search SEC.gov      
+
+
+
+
+Company Filings 
+
+
+
+  
+
+  
+    
+      
+            
+      
+    
+    
+      
+    
+  
+  
+    
+      U.S. Securities and Exchange Commission
+  
+   
+
+    
+    q
+  
+
+    
+  
+
+  
+
+
+      
+
+      
+
+        
+            
+    
+  
+    
+      
+            
+          
+    
+              
+                          
+                About
+                                
+                          
+                Careers
+              
+                    
+                Commissioners
+              
+                    
+                Contact
+              
+                    
+                Reports and Publications
+              
+                    
+                Securities Laws
+              
+                    
+                What We Do
+              
+        
+  
+              
+                    
+                Divisions & Offices
+                                
+                          
+                Corporation Finance
+              
+                    
+                Enforcement
+              
+                    
+                Investment Management
+              
+                    
+                Economic and Risk Analysis
+              
+                    
+                Trading and Markets
+              
+                    
+                Office of Administrative Law Judges
+              
+                    
+                Examinations
+              
+                    
+                Regional Offices
+              
+                    
+                All Divisions and Offices
+              
+        
+  
+              
+                    
+                Enforcement
+                                
+                          
+                Litigation Releases
+              
+                    
+                Administrative Proceedings
+              
+                    
+                Opinions and Adjudicatory Orders
+              
+                    
+                Accounting and Auditing
+              
+                    
+                Trading Suspensions
+              
+                    
+                How Investigations Work
+              
+                    
+                Receiverships
+              
+                    
+                Information for Harmed Investors
+              
+        
+  
+              
+                    
+                Regulation
+                                
+                          
+                Rulemaking Index
+              
+                    
+                Proposed Rules
+              
+                    
+                Final Rules
+              
+                    
+                Interim Final Temporary Rules
+              
+                    
+                Other Orders and Notices
+              
+                    
+                Self-Regulatory Organizations
+              
+                    
+                Staff Interpretations
+              
+        
+  
+              
+                    
+                Education
+                                
+                          
+                Investor Education
+              
+                    
+                Small Business Capital Raising 
+              
+                    
+                Glossaries
+              
+        
+  
+              
+                    
+                Filings
+                                
+                          
+                EDGAR – Search & Access
+              
+                    
+                EDGAR – Information for Filers
+              
+                    
+                Company Filing Search
+              
+                    
+                How to Search EDGAR
+              
+                    
+                Requesting Public Documents
+              
+                    
+                Forms List
+              
+                    
+                About EDGAR
+              
+        
+  
+              
+                    
+                News
+                                
+                          
+                Press Releases
+              
+                    
+                Speeches and Statements
+              
+                    
+                Spotlight Topics
+              
+                    
+                Upcoming Events
+              
+                    
+                Webcasts
+              
+                    
+                SEC in the News
+              
+                    
+                SEC Videos
+              
+                    
+                Media Gallery
+              
+        
+  
+              
+        
+  
+
+  
+    
+  
+
+            
+  User account menu
+  
+
+        
+              
+        
+            
+              Log in
+              
+
+
+        
+  
+
+
+  
+
+  
+
+
+        
+
+        
+          
+              
+                      
+      
+        U.S. Securities and Exchange Commission
+                                
+                      
+      
+        Divisions & Offices
+              
+
+                  
+      
+        Enforcement
+              
+
+                  
+      
+        Regulation
+              
+
+                  
+      
+        Education
+              
+
+                  
+      
+        Filings
+              
+
+                  
+      
+        Newsroom
+              
+
+        
+  
+              
+
+                  
+      
+        Newsroom
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speehes
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        RSS Feeds
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speeches
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        Social Media
+                                
+                      
+      
+        @SEC_News
+              
+
+                  
+      
+        SEC Channel
+              
+
+                  
+      
+        SEC Photostream
+              
+
+        
+  
+              
+
+        
+  
+
+
+
+                          
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                  
+
+      
+    
+          
+        
+            
+    
+
+  
+
+
+        
+      
+    
+    
+                                
+        
+        
+        
+    
+    
+      
+
+                  
+
+      
+      
+            
+          
+            
+                              
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                      
+
+          
+        
+                    
+
+      
+
+    
+    		
+    
+    
+              
+            
+    
+  
+    
+      
+
+  
+  
+    
+
+    
+                
+
+
+
+
+        
+
+
+  
+        
+            
+                  		        Other
+            		              
+            
+
+
+  
+    
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+    
+    
+      
+        
+      
+      
+        
+      
+      
+        
+      
+    
+    
+    
+  
+
+
+
+              
+              
+                
+        
+        Confidential Treatment Applications Submitted Pursuant to Rules 406 and  24b-2
+                
+
+        
+                  
+                            Dec. 18, 2019
+                       
+        
+                
+              
+      
+      
+            h4 {margin-bottom: 5px;}
+
+Division of Corporation Finance
+Securities and Exchange Commission
+
+CF Disclosure Guidance: Topic No. 7
+
+Date: December 19, 2019; Amended March 9, 2021
+
+Summary: This guidance addresses how and what to submit when filing an application objecting to public release of information otherwise required to be filed under the Securities Act and the Securities Exchange Act. This guidance replaces and supersedes the guidance provided in Staff Legal Bulletins 1 and 1A.
+
+Supplementary Information: The statements in this CF Disclosure Guidance represent the views of the Division of Corporation Finance. This guidance is not a rule, regulation or statement of the Securities and Exchange Commission. Further, the Commission has neither approved nor disapproved its content. This guidance, like all staff guidance, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person.
+
+Introduction
+
+Securities Act Rule 406[1] and Exchange Act Rule 24b-2[2] provide the exclusive means for companies to object to the public release of confidential information that is otherwise required to be filed. While the rules refer to “documents” that contain confidential information, generally, applications for confidential treatment pursuant to these rules relate to material contracts required to be filed as exhibits to filings.[3] Prior to March 2019, confidential treatment applications under these rules used to be the primary method for companies to protect confidential commercial or financial information filed in materials contracts. In March 2019, the Commission changed several of its exhibit filing requirements to allow companies to omit immaterial, competitively harmful information without having to provide the information to the Commission and request staff approval of the omissions.[4] While most companies now rely on those provisions, the process described in this guidance is still an available alternative to companies that wish to protect confidential information using the traditional confidential treatment application process. This guidance also applies to those filings, such as Schedule 13D or filings whose exhibit requirements are set out in Item 1016 of Regulation M-A, where confidential treatment applications are still the only available method to protect private information in filed exhibits.
+
+How to apply for confidential treatment
+
+File the exhibit on EDGAR without the confidential information
+
+To apply for confidential treatment under Rules 406 and 24b-2, an applicant must file the required exhibit with the associated filing. The applicant must omit all confidential information from that exhibit and must mark it to indicate where it has omitted information. The filing must indicate, at the appropriate places in the exhibit, that the confidential information has been filed separately with the Commission. 
+
+Submit a written application
+
+The applicant must send a paper application to the Office of the Secretary in which it objects to public disclosure of the confidential information.[5] As required by Rules 406 and 24b-2, the applicant must:
+
+
+	Provide one unredacted copy of the contract required to be filed with the Commission with the confidential portions of the document identified;
+	Identify the Freedom of Information Act[6] exemption it is relying on to object to the public release of the information and provide an analysis of how that exemption applies to the omitted information.
+	Often, this is the exemption provided by Section 552(b)(4)[7] of the FOIA, which protects “commercial or financial information obtained from a person and privileged or confidential.” If this is the case, the Supreme Court’s decision in Food Marketing Institute v. Argus Leader Media, 139 S.Ct. 2356 (2019) addresses the definition of confidential and may be helpful in providing this analysis;
+	
+	Justify the time period for which confidential treatment is sought;
+	Explain, in detail, why, based on the applicant’s specific facts and circumstances, disclosure of the information is unnecessary for the protection of investors. This generally is encompassed in a materiality discussion, addressed below;
+	Provide written consent to the furnishing of the confidential information to other government agencies, offices or bodies and to the Congress;
+	Identify each exchange, if any, with which the material is filed (required in applications under Rule 24b-2 relating to Exchange Act filings only); and
+	Provide the name, address and telephone number of the person with whom the Division should communicate and direct all issued notices and orders.
+
+
+Additional considerations
+
+Consistent with our investor protection mandate and the provisions of the FOIA, we also consider additional information when assessing the potential impacts of the proposed omissions of information from material contracts. These considerations generally fall into two categories:
+
+Materiality of the omitted information
+
+We do not permit filers to omit material information from an exhibit, even if it has been previously treated as confidential by the applicant.
+
+While evaluating a confidential treatment application, we consider the omitted provisions and information provided in the application and, if it is clear from the text of the filed document and the associated application that the redacted information is not material, we will not question the applicant’s materiality representation. If it is not clear to us whether some or all of the omitted information is not material, we will discuss our concerns with the applicant. If we are unable to agree that some or all of the omitted information is immaterial, we will request an amended application and amendment to the filing.
+
+Excessive omissions
+
+If the applicant omits information beyond what it customarily and actually treats as private or confidential, we will request an amendment with more circumscribed omissions and an amended application. 
+
+Division review of applications for confidential treatment
+
+The Division reviews all applications for confidential treatment to determine whether the applicant has provided all information necessary to warrant the issuance of an order granting the request for confidential treatment.
+
+If we require additional information to assess the application, we will convey any comments to the applicant by telephone and request a written response. Upon resolution of any comments, we will grant the application or allow the applicant to withdraw it, as appropriate. If we determine to grant an application, we will issue an order and post it with the company’s filing history on sec.gov. We will notify the applicant by phone that we have posted the order.
+
+If the applicant does not respond to our comments or our comments are not resolved, we may take action to deny the application. We will notify the applicant or the agent for service by registered or certified mail and advise it that it may petition the Commission for review of a determination by the Division disallowing the objections.[8] If as a result of this process we ultimately issue an order denying the application, we will post the denial order with the company’s filing history on sec.gov.
+
+Options for when a confidential treatment order is about to expire [as amended March 9, 2021]
+
+Companies that previously have obtained a confidential treatment order have three choices of what to do when the order is about to expire:
+
+Refile the unredacted exhibit
+
+If the contract is still material, refile it in complete, unredacted form if none of the information needs to be protected from public disclosure.
+
+Extend the confidential period pursuant to Rules 406 or 24b-2
+
+If the contract continues to be material, and the previously redacted information continues to be confidential, companies may request to extend the period of confidential treatment by filing an application under Rule 406 or Rule 24b-2 to continue to protect the confidential information from public release.
+
+If the order is about to expire and initially was issued after October 15, 2017
+
+If the order is about to expire and was initially issued after October 15, 2017, companies may use the short form application, which provides a streamlined process to file an application to extend the time for which confidential treatment has been granted.[9]
+
+Submit short form applications to CTExtensions@sec.gov. Do not use this email address for any other type of confidential treatment application.
+
+If the order is about to expire and initially was issued on or before October 15, 2017
+
+If the order is about to expire and initially was issued on or before October 15, 2017, companies may file new, complete applications for confidential treatment under Rule 406 or Rule 24b-2. The short form application is not available in these cases.
+
+Submit new applications to the Office of the Secretary before an order will expire and provide sufficient time for staff review and processing.
+
+Transition to the rules governing the filing of redacted exhibits under Regulation S-K Item 601(b)(10)(iv)[10] and parallel rules
+
+If the initial confidential treatment order was issued on or before October 15, 2017, and if the contract continues to be material, companies have the option to transition to compliance with the requirements set out in Regulation S-K Item 601(b)(10) and other parallel rules, referred to here as the redacted exhibit rules. The redacted exhibit rules allow for the filing of redacted exhibits without submitting an explanation or substantiation to the SEC, or providing an unredacted copy of the exhibit, except upon request of the staff. In order to transition to the redacted exhibits rules in these situations, a company would only be required to refile the material contract in redacted form and comply with the legend and other requirements of the applicable redacted exhibit rule, most commonly Item 601(b)(10)(iv) of Regulation S-K. We anticipate that many if not most companies will chose to transition to this process since substantiation of compliance and submission of unredacted materials to the staff is only required upon staff request.
+
+With regard to the timing of the transition, the staff will not recommend enforcement action to the Commission if a company refiles a redacted exhibit in compliance with the redacted exhibit rules in the company’s first Exchange Act report following the expiration of the confidential treatment order.[11]
+
+If you have questions relating to the filing and processing of extension requests, or transitioning to compliance with the redacted exhibit rules, email us at CTExtensions@sec.gov and ask us to call you at the phone number of your choice to discuss your questions. Do not include any confidential information in your emails.
+
+
+
+
+[1] 17 CFR 230.406.
+
+
+
+[2] 17 CFR 240.24b-2.
+
+
+
+[3] We will refer to documents that are the subject of a confidential treatment request under Rules 406 and 24b-2 as “documents,” “material contracts” or “exhibits.”
+
+
+
+[4] See Release No. 33-10618 (March 20, 2019)[84 FR 12674].
+
+
+
+[5] Rules 406 and 24b-2 provide that the confidential information will not be made publicly available at least as long as the final disposition of the application is pending.
+
+
+
+[6] 5 USC 552.
+
+
+
+[7] 5 USC 552(b)(4).
+
+
+
+[8] See 17 CFR 201.431.
+
+
+
+[9] Pursuant to this application, the applicant can affirm that the most recently considered application continues to be true, complete and accurate regarding the information for which the applicant continues to seek confidential treatment and indicate the desired time period of the extension. The applicant must provide a brief explanation to support the request. The applicant is not required to refile the unredacted documents or provide the supporting analysis presented in the previous application for that document(s) if the analysis remains the same. If the applicant reduces the extent of omitted information, it must file the revised redacted version of the exhibit on EDGAR when it submits the short form extension application.
+
+
+
+[10] 17 CFR 229.601(b)(10)(iv).
+
+
+
+[11] If a company’s confidential treatment order was granted on or before October 15, 2017, it does not have to wait for the order to expire to transition to compliance with the redacted exhibit rules. It can transition by complying with those rules in a new filing or by amending a previously filed document to refile a redacted exhibit.
+
+
+
+      
+                          
+
+              
+                
+          
+        
+                              
+
+          
+		
+                
+          
+        
+              
+            
+
+    
+          Modified: March 9, 2021
+      
+  
+
+
+  
+
+  
+
+
+        
+      
+        
+      
+      
+
+      
+    
+    
+    
+                  
+                  
+              
+    
+
+  
+    
+        STAY CONNECTED
+1 Twitter 2 Facebook 3RSS 4YouTube
+6LinkedIn  8 Email Updates 
+
+  
+
+  
+
+
+          
+                
+        
+          
+    
+            
+  About The SEC
+  
+
+        
+              
+              
+        Budget & Performance
+              
+
+          
+        Careers
+              
+
+          
+        Commission Votes
+              
+
+          
+        Contact
+              
+
+          
+        Contracts
+              
+
+          
+        Data Resources
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Transparency
+  
+
+        
+              
+              
+        Accessibility & Disability
+              
+
+          
+        Diversity & Inclusion
+              
+
+          
+        FOIA
+              
+
+          
+        Inspector General
+              
+
+          
+        No FEAR Act & EEO Data
+              
+
+          
+        Ombudsman
+              
+
+          
+        Whistleblower Protection
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Websites
+  
+
+        
+              
+              
+        Investor.gov
+              
+
+          
+        Related Sites
+              
+
+          
+        USA.gov
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Site Information
+  
+
+        
+              
+              
+        Plain Writing
+              
+
+          
+        Privacy & Security
+              
+
+          
+        Site Map
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+
+        
+      
+        
+                
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "confidential-treatment-applications"});
+      
+        
+
+
+
+
+  
+
+    
+
+    Return to Top
+
+    
+  
+  
+    
+      
+        
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+        
+      
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+      
+      
+    
+  
+
+
+    
+
+
+
+
+  window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"32edb8f179","applicationID":"436723953","transactionName":"ZQZSMBQEXxZZARJeXlxMcQcSDF4LFxIHUFRtAFEHDgA=","queueTime":0,"applicationTime":44,"atts":"SUFRRlweTBg=","errorBeacon":"bam.nr-data.net","agent":""}
+  

@@ -1,0 +1,1075 @@
+
+    (window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"32edb8f179",applicationID:"436723953"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(9),c=t(10),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(11);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(8),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],7:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],8:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],9:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],10:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],11:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(9),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!M++){var t=T.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(x,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+T.offset],null,"api"),c("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===m.readyState&&o()}function o(){c("mark",["domContent",a()+T.offset],null,"api")}var a=t(5),c=t("handle"),f=t(9),u=t("ee"),s=t(7),d=t(2),p=t(3),l=d.getConfiguration("ssl")===!1?"http":"https",v=window,m=v.document,g="addEventListener",y="attachEvent",h=v.XMLHttpRequest,w=h&&h.prototype,b=!1;NREUM.o={ST:setTimeout,SI:v.setImmediate,CT:clearTimeout,XHR:h,REQ:v.Request,EV:v.Event,PR:v.Promise,MO:v.MutationObserver};var E=""+location,x={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1216.min.js"},O=h&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),T=e.exports={offset:a.getLastTimestamp(),now:a,origin:E,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(6),m[g]?(m[g]("DOMContentLoaded",o,p(!1)),v[g]("load",r,p(!1))):(m[y]("onreadystatechange",i),v[y]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var M=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(10),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    SEC.gov | Sample Letter to China-Based Companies[1]
+    window.env = "production";
+    
+
+
+    {"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/320841","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":".*\\.gov|http:\/\/www.xbrl.org\/utr\/2013-05-17\/utr.xml|http:\/\/www.xbrl.org\/dtr\/type\/numeric-2009-12-16.xsd|http:\/\/www.xbrl.org\/dtr\/type\/nonNumeric-2009-12-16.xsd|https:\/\/secir.secure.force.com\/ombudsman\/OMMSForm","extInclude":"","extCssExclude":".data-exempt","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving the SEC Website. The link you have selected is located on another server. Please click on the OK button below to proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"user":{"uid":0,"permissionsHash":"04c00260856b47a8f01845e15ffeca03669183d8466dd7ddc4290c568154092e"}}
+
+
+  
+  
+
+    
+      Skip to main content
+    
+    
+      
+    
+
+
+
+
+  
+    
+      
+        
+    
+
+  
+    
+        
+
+
+
+Search SEC.gov      
+
+
+
+
+Company Filings 
+
+
+
+  
+
+  
+    
+      
+            
+      
+    
+    
+      
+    
+  
+  
+    
+      U.S. Securities and Exchange Commission
+  
+   
+
+    
+    q
+  
+
+    
+  
+
+  
+
+
+      
+
+      
+
+        
+            
+    
+  
+    
+      
+            
+          
+    
+              
+                          
+                About
+                                
+                          
+                Careers
+              
+                    
+                Commissioners
+              
+                    
+                Contact
+              
+                    
+                Reports and Publications
+              
+                    
+                Securities Laws
+              
+                    
+                What We Do
+              
+        
+  
+              
+                    
+                Divisions & Offices
+                                
+                          
+                Corporation Finance
+              
+                    
+                Enforcement
+              
+                    
+                Investment Management
+              
+                    
+                Economic and Risk Analysis
+              
+                    
+                Trading and Markets
+              
+                    
+                Office of Administrative Law Judges
+              
+                    
+                Examinations
+              
+                    
+                Regional Offices
+              
+                    
+                All Divisions and Offices
+              
+        
+  
+              
+                    
+                Enforcement
+                                
+                          
+                Litigation Releases
+              
+                    
+                Administrative Proceedings
+              
+                    
+                Opinions and Adjudicatory Orders
+              
+                    
+                Accounting and Auditing
+              
+                    
+                Trading Suspensions
+              
+                    
+                How Investigations Work
+              
+                    
+                Receiverships
+              
+                    
+                Information for Harmed Investors
+              
+        
+  
+              
+                    
+                Regulation
+                                
+                          
+                Rulemaking Index
+              
+                    
+                Proposed Rules
+              
+                    
+                Final Rules
+              
+                    
+                Interim Final Temporary Rules
+              
+                    
+                Other Orders and Notices
+              
+                    
+                Self-Regulatory Organizations
+              
+                    
+                Staff Interpretations
+              
+        
+  
+              
+                    
+                Education
+                                
+                          
+                Investor Education
+              
+                    
+                Small Business Capital Raising 
+              
+                    
+                Glossaries
+              
+        
+  
+              
+                    
+                Filings
+                                
+                          
+                EDGAR – Search & Access
+              
+                    
+                EDGAR – Information for Filers
+              
+                    
+                Company Filing Search
+              
+                    
+                How to Search EDGAR
+              
+                    
+                Requesting Public Documents
+              
+                    
+                Forms List
+              
+                    
+                About EDGAR
+              
+        
+  
+              
+                    
+                News
+                                
+                          
+                Press Releases
+              
+                    
+                Speeches and Statements
+              
+                    
+                Spotlight Topics
+              
+                    
+                Upcoming Events
+              
+                    
+                Webcasts
+              
+                    
+                SEC in the News
+              
+                    
+                SEC Videos
+              
+                    
+                Media Gallery
+              
+        
+  
+              
+        
+  
+
+  
+    
+  
+
+            
+  User account menu
+  
+
+        
+              
+        
+            
+              Log in
+              
+
+
+        
+  
+
+
+  
+
+  
+
+
+        
+
+        
+          
+              
+                      
+      
+        U.S. Securities and Exchange Commission
+                                
+                      
+      
+        Divisions & Offices
+              
+
+                  
+      
+        Enforcement
+              
+
+                  
+      
+        Regulation
+              
+
+                  
+      
+        Education
+              
+
+                  
+      
+        Filings
+              
+
+                  
+      
+        Newsroom
+              
+
+        
+  
+              
+
+                  
+      
+        Newsroom
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speehes
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        RSS Feeds
+                                
+                      
+      
+        Press Releases
+              
+
+                  
+      
+        Public Statements
+              
+
+                  
+      
+        Speeches
+              
+
+                  
+      
+        Testimony
+              
+
+        
+  
+              
+
+                  
+      
+        Social Media
+                                
+                      
+      
+        @SEC_News
+              
+
+                  
+      
+        SEC Channel
+              
+
+                  
+      
+        SEC Photostream
+              
+
+        
+  
+              
+
+        
+  
+
+
+
+                          
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                  
+
+      
+    
+          
+        
+            
+    
+
+  
+
+
+        
+      
+    
+    
+                                
+        
+        
+        
+    
+    
+      
+
+                  
+
+      
+      
+            
+          
+            
+                              
+    
+            
+  Corpfin
+  
+
+        
+              
+              
+        Corporation Finance
+              
+
+          
+        About
+              
+
+          
+         Accounting and Financial Reporting Guidance
+              
+
+          
+        Compliance and Disclosure Interpretations
+              
+
+          
+        Filing Review Process
+              
+
+          
+        Financial Reporting Manual
+              
+
+          
+        No-Action, Interpretive and Exemptive Letters
+              
+
+          
+        Statutes, Rules and Forms
+              
+
+          
+        Small Business
+              
+
+          
+        Contact Us
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+                      
+
+          
+        
+                    
+
+      
+
+    
+    		
+    
+    
+              
+            
+    
+  
+    
+      
+
+  
+  
+    
+
+    
+                
+
+
+
+
+        
+
+
+  
+        
+            
+                  		        Other
+            		              
+            
+
+
+  
+    
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+    
+    
+      
+        
+      
+      
+        
+      
+      
+        
+      
+    
+    
+    
+  
+
+
+
+              
+              
+                
+        
+        Sample Letter to China-Based Companies[1]
+                
+
+        
+                  
+                            Dec. 20, 2021
+                       
+        
+                
+              
+      
+      
+            Recent events have highlighted the risks associated with investing in companies that are based in or that have the majority of their operations in the People’s Republic of China (China-based companies). The Division of Corporation Finance believes that more prominent, specific, and tailored disclosure about these risks, and companies’ use of the variable interest entity (VIE) structure specifically,[2] is warranted to provide investors with the information they need to make informed investment decisions and for companies to comply with their disclosure obligations under the federal securities laws. The Division previously provided its views regarding certain disclosure considerations for China-based companies,[3] and, in July 2021, Chair Gensler issued a Statement on Investor Protection Related to Recent Developments in China.[4] Among other things, the Chair’s statement noted that the People’s Republic of China (PRC or China) has provided new guidance to, and placed restrictions on, China-based companies raising capital outside of China.
+
+In light of these concerns, the Division is issuing comments to China-based companies seeking more specific and prominent disclosure about the legal and operational risks associated with China-based companies. The Division’s comments focus on the need for clear and prominent disclosure regarding the structure of the company, including the relationship between the entity conducting the offering and the entities conducting the operating activities, risks associated with a company’s use of the VIE structure, and the potential impact on the company’s operations and investors’ interests if such structure were disallowed or the contracts were determined to be unenforceable. The Division’s comments also focus on additional legal, regulatory, and enforcement risks that may apply to investments in China-based companies, such as the potential impact of the Holding Foreign Companies Accountable Act and related rules and any necessary PRC permissions a China-based company may need to operate its business or offer securities to foreign investors.[5]
+
+The following illustrative letter contains sample comments that, depending on the particular facts and circumstances, the Division may issue to China-based companies.[6] These sample comments do not constitute an exhaustive list of the issues that companies should consider.[7] The Division urges companies to consider these sample comments and additional regulatory developments in this area as they prepare their disclosure documents. The Division also encourages companies to consider the following depending on their unique circumstances:
+
+
+	If you are a Special Purpose Acquisition Company (SPAC) with sponsors based in China, executive offices in China, or a majority of your executive officers and/or directors are located in or have significant ties with China, or are contemplating merging with a company incorporated in China, the Division’s view is that specific disclosure about these circumstances is warranted to meet the company’s disclosure obligations. Specifically, your disclosure should address the risks associated with the SPAC’s operations, as well as the challenges that investors in the SPAC might face in enforcing their rights under the SPAC’s controlling agreements. Similarly, your disclosure should address any impact PRC law or regulation may have on the SPAC’s ability to complete a merger transaction with an operating company in China, or the cash flows associated with the business combination, including shareholder redemption rights. Finally, the disclosure should cover the risks related to an investment in a China-based company after any subsequent business combination with an operating company, including any PRC government regulation of that entity’s business or industry.
+
+
+
+	For China-based registrants with ongoing periodic reporting obligations or that are engaged in capital raising transactions via takedowns from an effective shelf registration statement, the Division expects your prospectus supplements or incorporated periodic or current reports, and future periodic reports, to disclose the information and risks discussed below.
+
+
+The Division encourages companies to contact the industry office responsible for the company’s filings with any questions regarding the company’s proposed disclosure.
+
+
+December 2021
+
+Name
+ABC Corporation
+Address
+
+Dear Issuer:
+
+We have reviewed your filing and have the following comments. Please revise or update your disclosure in response to our comments.
+
+Prospectus Cover Page
+
+
+	Please disclose prominently on the prospectus cover page that you are not a Chinese operating company but a Cayman Islands holding company with operations conducted by your subsidiaries and through contractual arrangements with a variable interest entity (VIE) based in China and that this structure involves unique risks to investors. If true, disclose that these contracts have not been tested in court. Explain whether the VIE structure is used to provide investors with exposure to foreign investment in China-based companies where Chinese law prohibits direct foreign investment in the operating companies, and disclose that investors may never hold equity interests in the Chinese operating company. Your disclosure should acknowledge that Chinese regulatory authorities could disallow this structure, which would likely result in a material change in your operations and/or a material change in the value of the securities you are registering for sale, including that it could cause the value of such securities to significantly decline or become worthless. Provide a cross-reference to your detailed discussion of risks facing the company and the offering as a result of this structure.
+
+
+
+	Provide prominent disclosure about the legal and operational risks associated with being based in or having the majority of the company’s operations in China. Your disclosure should make clear whether these risks could result in a material change in your operations and/or the value of the securities you are registering for sale or could significantly limit or completely hinder your ability to offer or continue to offer securities to investors and cause the value of such securities to significantly decline or be worthless. Your disclosure should address how recent statements and regulatory actions by China’s government, such as those related to the use of variable interest entities and data security or anti-monopoly concerns, have or may impact the company’s ability to conduct its business, accept foreign investments, or list on a U.S. or other foreign exchange. Please disclose whether your auditor is subject to the determinations announced by the PCAOB on December 16, 2021 and whether and how the Holding Foreign Companies Accountable Act and related regulations will affect your company. Your prospectus summary should address, but not necessarily be limited to, the risks highlighted on the prospectus cover page.
+
+
+
+	Clearly disclose how you will refer to the holding company, subsidiaries, and VIEs when providing the disclosure throughout the document so that it is clear to investors which entity the disclosure is referencing and which subsidiaries or entities are conducting the business operations. Refrain from using terms such as “we” or “our” when describing activities or functions of a VIE. For example, disclose, if true, that your subsidiaries and/or the VIE conduct operations in China, that the VIE is consolidated for accounting purposes but is not an entity in which you own equity, and that the holding company does not conduct operations. Disclose clearly the entity (including the domicile) in which investors are purchasing an interest.
+
+
+
+	Provide a description of how cash is transferred through your organization and disclose your intentions to distribute earnings or settle amounts owed under the VIE agreements. State whether any transfers, dividends, or distributions have been made to date between the holding company, its subsidiaries, and consolidated VIEs, or to investors, and quantify the amounts where applicable. Provide cross-references to the condensed consolidating schedule and the consolidated financial statements.
+
+
+Prospectus Summary
+
+
+	Disclose clearly that the company uses a structure that involves a VIE based in China and what that entails, and provide early in the summary a diagram of the company’s corporate structure, identifying the person or entity that owns the equity in each depicted entity. Describe all contracts and arrangements through which you claim to have economic rights and exercise control that results in consolidation of the VIE’s operations and financial results into your financial statements. Identify clearly the entity in which investors are purchasing their interest and the entity(ies) in which the company’s operations are conducted. Describe the relevant contractual agreements between the entities and how this type of corporate structure may affect investors and the value of their investment, including how and why the contractual arrangements may be less effective than direct ownership and that the company may incur substantial costs to enforce the terms of the arrangements. Disclose the uncertainties regarding the status of the rights of the Cayman Islands holding company with respect to its contractual arrangements with the VIE, its founders and owners, and the challenges the company may face enforcing these contractual agreements due to legal uncertainties and jurisdictional limits.
+
+
+
+	We note your disclosure that the Cayman Islands holding company controls and receives the economic benefits of the VIE’s business operations through contractual agreements between the VIE and your Wholly Foreign-Owned Enterprise (WFOE) and that those agreements are designed to provide your WFOE with the power, rights, and obligations equivalent in all material respects to those it would possess as the principal equity holder of the VIE. We also note your disclosure that the Cayman Islands holding company is the primary beneficiary of the VIE. However, neither the investors in the holding company nor the holding company itself have an equity ownership in, direct foreign investment in, or control of, through such ownership or investment, the VIE. Accordingly, please refrain from implying that the contractual agreements are equivalent to equity ownership in the business of the VIE. Any references to control or benefits that accrue to you because of the VIE should be limited to a clear description of the conditions you have satisfied for consolidation of the VIE under U.S. GAAP. Additionally, your disclosure should clarify that you are the primary beneficiary of the VIE for accounting purposes. Please also disclose, if true, that the VIE agreements have not been tested in a court of law.
+
+
+
+	In your summary of risk factors, disclose the risks that your corporate structure and being based in or having the majority of the company’s operations in China poses to investors. In particular, describe the significant regulatory, liquidity, and enforcement risks with cross-references to the more detailed discussion of these risks in the prospectus. For example, specifically discuss risks arising from the legal system in China, including risks and uncertainties regarding the enforcement of laws and that rules and regulations in China can change quickly with little advance notice; and the risk that the Chinese government may intervene or influence your operations at any time, or may exert more control over offerings conducted overseas and/or foreign investment in China-based issuers, which could result in a material change in your operations and/or the value of the securities you are registering for sale. Acknowledge any risks that any actions by the Chinese government to exert more oversight and control over offerings that are conducted overseas and/or foreign investment in China-based issuers could significantly limit or completely hinder your ability to offer or continue to offer securities to investors and cause the value of such securities to significantly decline or be worthless.
+
+
+
+	Disclose each permission or approval that you, your subsidiaries, or the VIEs are required to obtain from Chinese authorities to operate your business and to offer the securities being registered to foreign investors. State whether you, your subsidiaries, or VIEs are covered by permissions requirements from the China Securities Regulatory Commission (CSRC), Cyberspace Administration of China (CAC) or any other governmental agency that is required to approve the VIE’s operations, and state affirmatively whether you have received all requisite permissions or approvals and whether any permissions or approvals have been denied. Please also describe the consequences to you and your investors if you, your subsidiaries, or the VIEs: (i) do not receive or maintain such permissions or approvals, (ii) inadvertently conclude that such permissions or approvals are not required, or (iii) applicable laws, regulations, or interpretations change and you are required to obtain such permissions or approvals in the future.
+
+
+
+	Provide a clear description of how cash is transferred through your organization. Disclose your intentions to distribute earnings or settle amounts owed under the VIE agreements. Quantify any cash flows and transfers of other assets by type that have occurred between the holding company, its subsidiaries, and the consolidated VIEs, and direction of transfer. Quantify any dividends or distributions that a subsidiary or consolidated VIE have made to the holding company and which entity made such transfer, and their tax consequences. Similarly quantify dividends or distributions made to U.S. investors, the source, and their tax consequences. Your disclosure should make clear if no transfers, dividends, or distributions have been made to date. Describe any restrictions on foreign exchange and your ability to transfer cash between entities, across borders, and to U.S. investors. Describe any restrictions and limitations on your ability to distribute earnings from the company, including your subsidiaries and/or the consolidated VIEs, to the parent company and U.S. investors as well as the ability to settle amounts owed under the VIE agreements.
+
+
+
+	We note that the consolidated VIEs constitute a material part of your consolidated financial statements. Please provide in tabular form a condensed consolidating schedule that disaggregates the operations and depicts the financial position, cash flows, and results of operations as of the same dates and for the same periods for which audited consolidated financial statements are required. The schedule should present major line items, such as revenue and cost of goods/services, and subtotals and disaggregated intercompany amounts, such as separate line items for intercompany receivables and investment in subsidiary. The schedule should also disaggregate the parent company, the VIEs and its consolidated subsidiaries, the WFOEs that are the primary beneficiary of the VIEs, and an aggregation of other entities that are consolidated. The objective of this disclosure is to allow an investor to evaluate the nature of assets held by, and the operations of, entities apart from the VIE, as well as the nature and amounts associated with intercompany transactions. Any intercompany amounts should be presented on a gross basis and when necessary, additional disclosure about such amounts should be included in order to make the information presented not misleading.
+
+
+
+	Disclose that trading in your securities may be prohibited under the Holding Foreign Companies Accountable Act if the PCAOB determines that it cannot inspect or investigate completely your auditor, and that as a result an exchange may determine to delist your securities. Disclose whether your auditor is subject to the determinations announced by the PCAOB on December 16, 2021.
+
+
+Risk Factors
+
+
+	Revise your risk factors to acknowledge that if the PRC government determines that the contractual arrangements constituting part of the VIE structure do not comply with PRC regulations, or if these regulations change or are interpreted differently in the future, the securities you are registering may decline in value or become worthless if the determinations, changes, or interpretations result in your inability to assert contractual control over the assets of your PRC subsidiaries or the VIEs that conduct all or substantially all of your operations.
+
+
+
+	We note your disclosure about the Holding Foreign Companies Accountable Act. Please expand your risk factors to disclose that the United States Senate has passed the Accelerating Holding Foreign Companies Accountable Act, which, if enacted, would decrease the number of “non-inspection years” from three years to two years, and thus, would reduce the time before your securities may be prohibited from trading or delisted. Update your disclosure to reflect that the Commission adopted rules to implement the HFCAA and that, pursuant to the HFCAA, the PCAOB has issued its report notifying the Commission of its determination that it is unable to inspect or investigate completely accounting firms headquartered in mainland China or Hong Kong.
+
+
+
+	Given the Chinese government’s significant oversight and discretion over the conduct of your business, please revise to highlight separately the risk that the Chinese government may intervene or influence your operations at any time, which could result in a material change in your operations and/or the value of the securities you are registering. Also, given recent statements by the Chinese government indicating an intent to exert more oversight and control over offerings that are conducted overseas and/or foreign investment in China-based issuers, acknowledge the risk that any such action could significantly limit or completely hinder your ability to offer or continue to offer securities to investors and cause the value of such securities to significantly decline or be worthless.
+
+
+
+	In light of recent events indicating greater oversight by the Cyberspace Administration of China (CAC) over data security, particularly for companies seeking to list on a foreign exchange, please revise your disclosure to explain how this oversight impacts your business and your offering and to what extent you believe that you are compliant with the regulations or policies that have been issued by the CAC to date.
+
+
+We remind you that the company and its management are responsible for the accuracy and adequacy of their disclosures, notwithstanding any review, comments, action or absence of action by the staff.
+
+Sincerely,
+
+Division of Corporation Finance
+
+
+
+
+
+[1] The statements in this guidance represent the views of the staff of the Division of Corporation Finance. This guidance is not a rule, regulation, or statement of the Securities and Exchange Commission (“Commission”). The Commission has neither approved nor disapproved its content. This guidance, like all staff guidance, has no legal force or effect: it does not alter or amend applicable law, and it creates no new or additional obligations for any person.
+
+
+
+[2] In this context, the VIE structure often uses a series of contractual arrangements between a holding company domiciled outside of China and a Chinese operating company or companies, which may avoid PRC limitations or prohibitions on direct foreign ownership in certain industries. The contractual arrangements are intended to mimic direct ownership in the operating company, but in many cases have not been tested in court.
+
+
+
+[3] Division of Corporation Finance, CF Disclosure Guidance: Topic No. 10 Disclosure Considerations for China-Based Issuers (Nov. 23, 2020), available at https://www.sec.gov/corpfin/disclosure-considerations-china-based-issuers.
+
+
+
+[4] Chair Gary Gensler, Statements on Investor Protection Related to Recent Developments in China (July 30, 2021), available at https://www.sec.gov/news/public-statement/gensler-2021-07-30.
+
+
+
+[5] See Holding Foreign Companies Accountable Act, Pub. L. 116-222, 134 Stat. 1063 (Dec. 18, 2020), Holding Foreign Companies Accountable Act Disclosure, Release No. 34-93701 (Dec. 2, 2021).
+
+
+
+[6] The Division notes that recent developments with respect to the relationship between China and Hong-Kong may raise similar risk considerations for companies based in, or with the majority of their operations in, Hong Kong and therefore the Division also may issue similar comments to those companies.
+
+
+
+[7] While the comments partly focus on VIE structures, China-based companies that do not use such a structure also should consider the comments with a view to providing the disclosure that is applicable to their company.
+
+
+
+      
+                          
+
+              
+                
+          
+        
+                              
+
+          
+		
+                
+          
+        
+              
+            
+
+    
+          Modified: Dec. 20, 2021
+      
+  
+
+
+  
+
+  
+
+
+        
+      
+        
+      
+      
+
+      
+    
+    
+    
+                  
+                  
+              
+    
+
+  
+    
+        STAY CONNECTED
+1 Twitter 2 Facebook 3RSS 4YouTube
+6LinkedIn  8 Email Updates 
+
+  
+
+  
+
+
+          
+                
+        
+          
+    
+            
+  About The SEC
+  
+
+        
+              
+              
+        Budget & Performance
+              
+
+          
+        Careers
+              
+
+          
+        Commission Votes
+              
+
+          
+        Contact
+              
+
+          
+        Contracts
+              
+
+          
+        Data Resources
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Transparency
+  
+
+        
+              
+              
+        Accessibility & Disability
+              
+
+          
+        Diversity & Inclusion
+              
+
+          
+        FOIA
+              
+
+          
+        Inspector General
+              
+
+          
+        No FEAR Act & EEO Data
+              
+
+          
+        Ombudsman
+              
+
+          
+        Whistleblower Protection
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Websites
+  
+
+        
+              
+              
+        Investor.gov
+              
+
+          
+        Related Sites
+              
+
+          
+        USA.gov
+              
+
+        
+  
+
+
+
+
+
+  
+
+            
+  Site Information
+  
+
+        
+              
+              
+        Plain Writing
+              
+
+          
+        Privacy & Security
+              
+
+          
+        Site Map
+              
+
+        
+  
+
+
+
+
+
+  
+
+  
+
+
+        
+      
+        
+                
+        if (typeof dataLayer != "undefined") dataLayer.push({"pageType": "sample-letter-to-china-based Companies"});
+      
+        
+
+
+
+
+  
+
+    
+
+    Return to Top
+
+    
+  
+  
+    
+      
+        
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+          
+            
+          
+        
+      
+      
+        
+          
+        
+        
+          
+        
+        
+          
+        
+      
+      
+      
+    
+  
+
+
+    
+
+
+
+
+  window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"32edb8f179","applicationID":"436723953","transactionName":"ZQZSMBQEXxZZARJeXlxMcQcSDF4LFxIHUFRtAFEHDgA=","queueTime":0,"applicationTime":38,"atts":"SUFRRlweTBg=","errorBeacon":"bam.nr-data.net","agent":""}
+  
