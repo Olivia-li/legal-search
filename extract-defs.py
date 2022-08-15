@@ -1,18 +1,19 @@
 import re
+from main import convert_pdf_to_string
 
-FILE_PATH = "./docs/contracts/hotelier-sub.txt"
+FILE_PATH = "./docs/contracts/groundfloor-sub.pdf"
 
-with open(FILE_PATH, 'r') as f:
-  new_text = f.read().replace('“', '"').replace("”", '"').replace("", "") # normalize all quotation marks to "
+def extract_definitions_from_text(text):
+  definitions = {}
 
-  for match in re.finditer(r"\"([^\"’]*)(\"|’) means", new_text):
+  new_text = text.replace('“', '"').replace("”", '"').replace("", "") # normalize all quotation marks to "
+
+  for match in re.finditer(r"\"([^\"’]*)(\"|’)\s? means", new_text):
     term = match.groups()[0]
     def_start = match.span()[1]
-    def_end = new_text.find("\n\n", def_start)
-    definition = new_text[def_start:def_end].replace("\n", " ")
-    print(f"Definition of {term}:")
-    print(f"- {definition}")
-    print()
+    def_end = new_text.find("1.", def_start)
+    definition = new_text[def_start:def_end].replace("\n", " ").replace("1.", "")
+    definitions[term] = definition
 
   previous_section_at = 0
   last_section_num = 0
@@ -39,7 +40,7 @@ with open(FILE_PATH, 'r') as f:
       next_section = sections[i + 1]
 
     subsections = []
-   
+  
     for j in range(97, 123):
       pattern = re.compile(f"\n\({chr(j)}\) ")
       match = pattern.search(new_text, current_section["start"], next_section["start"])
@@ -54,8 +55,15 @@ with open(FILE_PATH, 'r') as f:
     for idx, start in enumerate(subsections):
       if idx != len(subsections) - 1:
         section_end = subsections[idx + 1]
-        sections[i]["subsections"].append(new_text[start:section_end])
-    
-    print(current_section["name"])
-    for subsection in sections[i]["subsections"]:
-      print(f"- {subsection[:100]}")
+        sections[i]["subsections"].append(new_text[start:section_end][:20].replace("\n", ""))
+  
+  return (sections, definitions)
+
+def main():
+  text = convert_pdf_to_string(FILE_PATH)
+  sections, definitions = extract_definitions_from_text(text)
+  print(sections)
+  print(definitions)
+
+if __name__ == '__main__':
+  main()

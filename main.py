@@ -29,7 +29,7 @@ def convert_pdf_to_string(path: Text) -> Text:
         parser = PDFParser(in_file)
         doc = PDFDocument(parser)
         rsrcmgr = PDFResourceManager()
-        string_device = TextConverter(rsrcmgr, output_string, laparams=LAParams())
+        string_device = TextConverter(rsrcmgr, output_string, laparams=LAParams(line_margin=4.0))
         string_interpreter = PDFPageInterpreter(rsrcmgr, string_device)
 
         for page in PDFPage.create_pages(doc):
